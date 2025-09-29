@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+button {
+  appearance: none;
+  border: none;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/Karla/Karla-VariableFont_wght.ttf") format("ttf");
+}
+
+.fontKarla {
+  font-family: "Karla";
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "FiraCode";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf")
+    format("ttf");
+}
+
+.fontKarla {
+  font-family: "FiraCode";
+}
