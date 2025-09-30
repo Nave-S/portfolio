@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../navbar/navbar.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from '../about/about.component';
 
 @Component({
@@ -10,3 +10,4 @@ import { AboutComponent } from '../about/about.component';
   styleUrl: './hero.component.scss',
 })
 export class HeroComponent {}
+
