@@ -1,12 +1,13 @@
 :host {
-  --bg: #0f1216;
+  --bg: #1c1c1c;
   --bg-2: #0b1f1f;
-  --fg: #dfe6ea;
+  --fg: #d9d9d9;
   --muted: #99a3ad;
   --accent: #2fe0c5;
   --accent-2: #1db7a0;
   --ring: rgba(47, 224, 197, 0.35);
   --marquee-text: #3dcfb6;
+  --scroll-btn: #3dcfb6;
   display: block;
 }
 
@@ -25,17 +26,8 @@
   max-height: 900px;
   width: 100%;
   color: var(--fg);
-  background: radial-gradient(
-      1200px 600px at 85% 0%,
-      rgba(17, 110, 102, 0.25),
-      transparent 60%
-    ),
-    radial-gradient(
-      800px 500px at 0% 10%,
-      rgba(6, 67, 73, 0.35),
-      transparent 60%
-    ),
-    linear-gradient(135deg, var(--bg) 0%, var(--bg-2) 100%);
+  background: radial-gradient(1200px 600px at 85% 0%, rgba(17, 110, 102, 0.25), transparent 60%),
+    radial-gradient(800px 500px at 0% 10%, rgba(6, 67, 73, 0.35), transparent 60%), linear-gradient(135deg, var(--bg) 0%, var(--bg-2) 100%);
   overflow: hidden;
   isolation: isolate;
 }
@@ -43,11 +35,7 @@
 .tint {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    80% 70% at 50% 20%,
-    transparent 40%,
-    rgba(0, 0, 0, 0.55) 100%
-  );
+  background: radial-gradient(80% 70% at 50% 20%, transparent 40%, rgba(0, 0, 0, 0.55) 100%);
   pointer-events: none;
 }
 
@@ -61,8 +49,8 @@
   text-align: center;
 
   .kicker {
-    font-family: "FiraCode", sans-serif;
-    text-transform: uppercase;
+    font-family: 'FiraCode', sans-serif;
+    // text-transform: uppercase;
     letter-spacing: 0.12em;
     color: var(--muted);
     font-size: clamp(1rem, 2.4vw, 1.6rem);
@@ -71,7 +59,7 @@
   }
 
   .title {
-    font-family: "Karla", sans-serif;
+    font-family: 'Karla', sans-serif;
     font-weight: 900;
     font-size: clamp(2.6rem, 9.5vw, 7.2rem);
     line-height: 0.95;
@@ -89,16 +77,14 @@
 }
 
 .btn {
-  --pad: 0.9rem 1.25rem;
-  padding: var(--pad);
+  padding: 0.9rem 1.25rem;
   border: solid 1px;
   border-radius: 35px;
   font-weight: 700;
   text-decoration: none;
-  font-family: "Karla", sans-serif;
+  font-family: 'Karla', sans-serif;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: transform 0.12s ease, box-shadow 0.2s ease, background 0.2s ease,
-    color 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.12s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   backdrop-filter: blur(4px);
   will-change: transform;
 
@@ -124,6 +110,10 @@
   }
 }
 
+.v-mail-position {
+  gap: 50px;
+}
+
 .v-email {
   // width: 100px;
   // height: 100px;
@@ -131,10 +121,10 @@
   position: absolute;
   cursor: pointer;
   right: clamp(1rem, 4vw, 3rem);
-  top: 32%;
+  top: 35%;
   transform: translateY(-50%) rotate(270deg);
   transform-origin: right top;
-  font-family: "Karla", sans-serif;
+  font-family: 'Karla', sans-serif;
   color: var(--muted);
   text-decoration: none;
   letter-spacing: 0.04em;
@@ -150,19 +140,25 @@
 }
 
 .scroll {
-  cursor: pointer;
   position: absolute;
   left: clamp(1rem, 4vw, 2rem);
-  bottom: clamp(8rem, 12vw, 10rem);
+  bottom: 0;
   z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.6rem;
 
   .circle {
+    cursor: pointer;
     width: 30px;
     height: 48px;
     border-radius: 999px;
-    border: 1px dashed rgba(255, 255, 255, 0.2);
-    display: grid;
-    place-items: center;
+    border: 1px dashed var(--scroll-btn);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     animation: float 2.6s ease-in-out infinite;
 
     .arrow {
@@ -170,6 +166,13 @@
       color: var(--accent);
     }
   }
+}
+
+.spacer-left {
+  color: var(--scroll-btn);
+  height: 200px;
+  border: solid 1px;
+  width: 1px;
 }
 
 @keyframes float {
@@ -183,75 +186,69 @@
 }
 
 .ticker {
-  position: relative;
-  inset-inline: 0vw;
+  position: absolute;
+  width: 110%;
+  left: 50%;
+  transform: translateX(-50%) rotate(-6deg);
+  transform-origin: bottom left;
   bottom: 0rem;
-  transform: rotate(-6deg);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.06),
-    rgba(255, 255, 255, 0.08)
-  );
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.08));
   box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   padding-block: 0.9rem;
-  z-index: 2;
+  z-index: 99;
+  overflow: hidden;
 
   .track {
-    font-family: "Karla", sans-serif;
+    font-family: 'Karla', sans-serif;
+    font-size: 32px;
     color: var(--marquee-text);
     display: inline-block;
     white-space: nowrap;
     font-weight: 700;
     letter-spacing: 0.04em;
     font-size: clamp(1rem, 2.2vw, 1.35rem);
-    padding-inline: 2rem;
+    // padding-inline: 2rem;
     animation: marquee 22s linear infinite;
+    transform: translateX(120%);
 
     span {
-      margin-right: 2rem;
+      margin-right: 3rem;
     }
   }
 }
 
 @keyframes marquee {
   0% {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(100%);
-  }
-}
-
-@media (min-width: 860px) {
-  .nav {
-    display: flex;
-  }
-}
-@media (max-width: 640px) {
-  .brand .brand-text {
-    display: none;
+    transform: translateX(-50%);
   }
 }
 
 .social {
-  cursor: pointer;
   position: absolute;
   right: clamp(0.6rem, 2vw, 1rem);
-  bottom: clamp(15rem, 10vw, 15rem);
-  display: grid;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 0.6rem;
   z-index: 3;
 
   .icon {
+    cursor: pointer;
     width: 40px;
     height: 40px;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 0.7rem;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.12);
-    transition: transform 0.12s ease, box-shadow 0.2s ease, background 0.2s ease,
-      border-color 0.2s ease;
+    transition: transform 0.12s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 
     img {
       width: 24px;
@@ -266,3 +263,11 @@
     }
   }
 }
+
+.spacer-right {
+  background-color: #ffffff;
+  height: 200px;
+  border: solid 1px;
+  width: 1px;
+}
+
