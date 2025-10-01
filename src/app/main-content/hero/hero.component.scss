@@ -1,14 +1,12 @@
 :host {
   --bg: #1c1c1c;
   --bg-2: #0b1f1f;
-  --fg: #d9d9d9;
+  --fc: #d9d9d9;
   --muted: #99a3ad;
-  --accent: #2fe0c5;
-  --accent-2: #1db7a0;
+  --accent: #3dcfb6;
   --ring: rgba(47, 224, 197, 0.35);
   --marquee-text: #3dcfb6;
   --scroll-btn: #3dcfb6;
-  display: block;
 }
 
 .content-wrapper {
@@ -25,7 +23,7 @@
   height: 100vh;
   max-height: 900px;
   width: 100%;
-  color: var(--fg);
+  color: var(--fc);
   background: radial-gradient(1200px 600px at 85% 0%, rgba(17, 110, 102, 0.25), transparent 60%),
     radial-gradient(800px 500px at 0% 10%, rgba(6, 67, 73, 0.35), transparent 60%), linear-gradient(135deg, var(--bg) 0%, var(--bg-2) 100%);
   overflow: hidden;
@@ -54,7 +52,7 @@
   .kicker {
     font-family: 'FiraCode', sans-serif;
     letter-spacing: 0.12em;
-    color: var(--muted);
+    color: var(--fc);
     font-size: clamp(1rem, 2.4vw, 1.6rem);
     margin: 0 0 1rem 0;
     opacity: 0.9;
@@ -71,10 +69,11 @@
   }
 
   .cta {
-    display: inline-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 0.9rem;
     flex-wrap: wrap;
-    justify-content: center;
   }
 }
 
@@ -92,11 +91,11 @@
 
   &.outline {
     cursor: pointer;
-    color: var(--fg);
+    color: var(--fc);
     background: rgba(255, 255, 255, 0.02);
     span {
       display: inline-block;
-      color: var(--fg);
+      color: var(--fc);
       transition: color 0.2s;
     }
     &:hover span {
@@ -156,12 +155,12 @@
   0% {
     transform: translateX(0);
     opacity: 1;
-    color: var(--fg);
+    color: var(--fc);
   }
   49% {
     transform: translateX(-100%);
     opacity: 0;
-    color: var(--fg);
+    color: var(--fc);
   }
   50% {
     transform: translateX(100%);
@@ -189,7 +188,7 @@
   z-index: 3;
 
   &:hover {
-    color: var(--fg);
+    color: var(--fc);
     opacity: 1;
     text-shadow: 0 0 10px rgba(47, 224, 197, 0.35);
   }
