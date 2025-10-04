@@ -1,32 +1,28 @@
 <section class="skills-section" aria-labelledby="skills-title">
   <div class="content">
-    <div class="row">
-      <div>
-        <p class="kicker">Technologies</p>
-        <article class="card" role="article">
-          <h2 id="skills-title" class="title">Skill Set</h2>
-          <p class="intro">
-            A short introduction of your skills. Highlight your experience of using different front-end technologies and emphasise your
-            openness to learning and adapting to new technologies. Show how important it is for you to keep up with the rapid changes in web
-            development.
-          </p>
+    <div class="card-title">
+      <p class="kicker">Technologies</p>
+      <article class="card" role="article">
+        <h2 id="skills-title" class="title">Skill Set</h2>
+        <p class="intro">
+          A short introduction of your skills. Highlight your experience of using different front-end technologies and emphasise your
+          openness to learning and adapting to new technologies. Show how important it is for you to keep up with the rapid changes in web
+          development.
+        </p>
 
-          <h3 class="pitch">
-            <span class="strong"></span><span>You need</span>&nbsp;<span class="pitch-second-half">another skill?</span>
-          </h3>
-          <p class="pitch-p">Feel free to contact me. I look forward to expanding on my previous knowledge.</p>
+        <h3 class="pitch"><span class="strong"></span><span>You need</span>&nbsp;<span class="pitch-second-half">another skill?</span></h3>
+        <p class="pitch-p">Feel free to contact me. I look forward to expanding on my previous knowledge.</p>
 
-          <button class="btn">Lets Talk</button>
-        </article>
+        <button class="btn">Lets Talk</button>
+      </article>
+    </div>
+    <div class="skills" role="list">
+      @for(skill of skills; track skill.label){
+      <div class="skill">
+        <img src="assets/icons/{{ skill.icon }}" alt="" srcset="" />
+        <span class="label">{{ skill.label }}</span>
       </div>
-      <div class="skills" role="list">
-        @for(skill of skills; track skill.label){
-        <div class="skill">
-          <img src="assets/icons/{{ skill.icon }}" alt="" srcset="" />
-          <span class="label">{{ skill.label }}</span>
-        </div>
-        }
-      </div>
+      }
     </div>
   </div>
 </section>

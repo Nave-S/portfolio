@@ -196,14 +196,15 @@
 
 .scroll {
   position: absolute;
-  left: clamp(1rem, 4vw, 2rem);
+  left: 0;
   bottom: 0;
   z-index: 5;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 16px;
+  margin-left: 96px;
 
   .circle {
     cursor: pointer;
@@ -215,6 +216,19 @@
     align-items: center;
     justify-content: center;
     animation: float 2.6s ease-in-out infinite;
+
+    &:hover {
+      border: 1px dashed var(--fc);
+      color: var(--fc);
+      opacity: 1;
+      text-shadow: 0 0 10px rgba(47, 224, 197, 0.35);
+
+      .arrow {
+        color: var(--fc); // Farbe beim Hover auf .circle
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(47, 224, 197, 0.35);
+      }
+    }
 
     .arrow {
       font-size: 1.1rem;
@@ -284,13 +298,14 @@
 
 .social {
   position: absolute;
-  right: clamp(0.6rem, 2vw, 1rem);
+  right: 0;
   bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
+  gap: 16px;
   z-index: 3;
+  margin-right: 32px;
 
   .icon {
     cursor: pointer;

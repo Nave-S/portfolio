@@ -1,0 +1,131 @@
+:host {
+  --bg: #1c1c1c;
+  --fc: #ffffff;
+  --muted: #a7b1bb;
+  --accent: #2fe0c5;
+  --rule: rgba(47, 224, 197, 0.35);
+}
+
+.projects {
+  // background: radial-gradient(1200px 600px at 0% 0%, rgba(47, 224, 197, 0.08), transparent 60%), var(--bg);
+  background: var(--bg);
+  // padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 6vw, 4rem);
+  font-family: 'FiraCode', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  color: var(--fc);
+  font-size: 18px;
+}
+
+.overall-container {
+  width: 100%;
+  max-width: 1980px;
+  height: 768px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.Featured-Projects-container {
+  width: 100%;
+  max-width: 880px;
+  height: 581px;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+}
+
+.projects-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  // width: 100%;
+  width: 360px;
+  height: 200px;
+  background-color: red;
+}
+
+.kicker {
+  margin-bottom: 20px;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 24px;
+  font-family: 'Karla', sans-serif;
+}
+
+.headline {
+  margin-bottom: 41px;
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.intro {
+  font-family: 'Karla', sans-serif;
+  max-width: 62ch;
+  color: var(--fc);
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 41px;
+}
+
+.list {
+  list-style: none;
+  margin: 1rem 0 0 0;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+  cursor: pointer;
+
+  padding: clamp(1rem, 3vw, 1.4rem) 0;
+  text-decoration: none;
+  color: var(--fc);
+  border-top: 1px solid var(--rule);
+
+  transition: color 0.2s ease, transform 0.12s ease;
+}
+.list li:last-child .item {
+  border-bottom: 1px solid var(--rule);
+  width: 880px;
+}
+
+.name {
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.6vw, 1.4rem);
+}
+
+.tech {
+  color: var(--muted);
+  font-size: clamp(0.95rem, 2vw, 1rem);
+  white-space: nowrap;
+}
+
+.dividing-line {
+  height: 20px;
+  width: 1px;
+  background-color: #3dcfb6;
+}
+
+.item:hover {
+  transform: translateX(2px);
+}
+.item:hover .name {
+  color: var(--accent);
+}
+.item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+

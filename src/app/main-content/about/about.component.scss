@@ -21,12 +21,13 @@
 }
 
 .content {
+  width: 100%;
   max-width: 1980px;
-  max-width: 1200px;
-  height: 695px;
+  height: 708px;
   display: flex;
-  justify-content: space-around;
-  gap: 100px;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 auto;
 }
 
 .portrait {
@@ -44,7 +45,7 @@
 .text-col {
   width: 100%;
   max-width: 570px;
-  margin-top: 100px;
+  padding-top: 200px;
 }
 
 .kicker {
@@ -59,7 +60,7 @@
   justify-content: center;
   align-items: baseline;
   flex-direction: column;
-  max-width: 536px;
+  max-width: 570px;
   width: 100%;
   gap: 32px;
   padding: 32px;
