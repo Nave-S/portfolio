@@ -26,8 +26,10 @@
   height: 708px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  margin: 0 auto;
+  justify-content: space-between;
+  gap: 48px;
+  padding-left: 96px;
+  padding-right: 96px;
 }
 
 .portrait {
