@@ -1,0 +1,50 @@
+<section class="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="left">
+      <p class="kicker">Contact me</p>
+      <h2 id="contact-title" class="headline">
+        <span>Let's work together</span>
+      </h2>
+
+      <h3 class="subhead">Got a problem to solve?</h3>
+      <p class="lead">
+        Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through
+        your work.
+      </p>
+      <span class="tail">Need a Frontend developer?</span>&nbsp;
+      <span class="tail-second">Let’s talk!</span>
+    </div>
+
+    <form class="right">
+      <label for="name" class="question">What's your name?</label>
+      <input id="name" type="text" formControlName="name" placeholder="Your name goes here" />
+      <div class="error">Please provide your name.</div>
+
+      <div class="field">
+        <label for="email" class="question">What's your email?</label>
+        <input id="email" type="email" formControlName="email" placeholder="youremail@email.com" />
+        <div class="error">Please provide a valid email.</div>
+      </div>
+
+      <div class="field">
+        <label for="message" class="question">How can I help you?</label>
+        <textarea id="message" formControlName="message" placeholder="Hello Nawied, I am interested in…"></textarea>
+        <div class="error">Please add a short message.</div>
+        <div class="field-last"></div>
+      </div>
+
+      <label class="consent">
+        <input type="checkbox" formControlName="consent" />
+        <span class="box" aria-hidden="true"></span>
+        <div class="consent-text-group">
+          <span class="consent-text">
+            I've read the <a class="consent-link" href="#">privacy policy</a> and agree to the processing of my data as outlined.
+          </span>
+        </div>
+      </label>
+
+      <button class="btn" type="submit">Say Hello ;)</button>
+    </form>
+  </div>
+</section>
+

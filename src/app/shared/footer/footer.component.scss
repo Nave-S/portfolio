@@ -1,0 +1,114 @@
+:host {
+  --bg: #1c1c1c;
+  --fc: #ffffff;
+  --accent: #3dcfb6;
+}
+
+.site-footer {
+  color: var(--fc);
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  background: var(--bg);
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-container {
+  padding-left: 96px;
+  padding-right: 96px;
+  max-width: 1980px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-overall-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--fc);
+
+  .mark {
+    width: 32px;
+    height: 40px;
+    font-weight: 800;
+    font-size: 40px;
+    letter-spacing: 0.04em;
+    color: #3dcfb6;
+    transform: translateY(22%) rotate(270deg);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  }
+
+  .brand-text {
+    font-size: 32px;
+    line-height: 0.95;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    opacity: 0.9;
+  }
+
+  &:hover .mark {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #2fe0c5;
+    font-weight: 900;
+  }
+
+  &:hover .brand-text {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px white;
+    font-weight: 900;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.info .line {
+  color: var(--fc);
+  font-size: 16px;
+}
+
+.copyright {
+  font-family: 'FiraCode', sans-serif;
+  color: var(--accent);
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.social a {
+  color: var(--fc);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.social a:hover {
+  color: var(--accent);
+}
+
+// @media (max-width: 980px) {
+//
+// }
+
