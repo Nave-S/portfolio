@@ -46,7 +46,15 @@
   width: 100%;
   max-width: 360px;
   height: 200px;
-  background-color: red;
+
+  .preview-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .kicker {
@@ -91,6 +99,15 @@
     background-color: #3dcfb64d;
   }
 }
+
+.name .arrow-icon {
+  display: none;
+}
+
+.item:hover .name .arrow-icon {
+  display: inline-block;
+}
+
 .list li:last-child .item {
   border-bottom: 1px solid var(--accent);
 }

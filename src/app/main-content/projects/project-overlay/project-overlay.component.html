@@ -1,1 +1,20 @@
-<p>project-overlay works!</p>
+<div *ngIf="open" class="overlay-root">
+  <div class="backdrop" (click)="onBackdropClick()" aria-hidden="true"></div>
+  <div class="overlay-content">
+    <div class="panel-left" role="dialog" aria-modal="true">
+      <h1 class="panel__title">01</h1>
+      <h2 class="panel__title">Join</h2>
+      <span>What is this project about</span>
+      <span
+        >Task manager inspiered by the Kanban System. Crat and organize tasks using drag and drop functions, assig users and
+        categories</span
+      >
+    </div>
+    <div class="panel__right">
+      <button type="button" class="panel__close" (click)="close()" aria-label="Close">×</button>
+      <img class="preview-img" src="/assets/images/join.png" alt="" />
+      <button type="button" class="panel__next" aria-label="Next">Next project-></button>
+    </div>
+  </div>
+</div>
+

@@ -7,8 +7,8 @@
 
       <ul class="list" role="list">
         <li>
-          <a class="item">
-            <span class="name">Join</span>
+          <a class="item" (click)="openOverlay()" (mouseenter)="showProjectPreview('Join')" (mouseleave)="hideProjectPreview()">
+            <span class="name">Join <img class="arrow-icon" src="/assets/icons/arrow_outward.png" alt="" /></span>
             <div class="tech-container">
               <span class="tech">HTML</span>
               <div class="dividing-line"></div>
@@ -21,8 +21,8 @@
           </a>
         </li>
         <li>
-          <a class="item">
-            <span class="name">El Pollo Loco</span>
+          <a class="item" (mouseenter)="showProjectPreview('El Pollo Loco')" (mouseleave)="hideProjectPreview()">
+            <span class="name">El Pollo Loco <img class="arrow-icon" src="/assets/icons/arrow_outward.png" alt="" /></span>
             <div class="tech-container">
               <span class="tech">HTML</span>
               <div class="dividing-line"></div>
@@ -32,9 +32,9 @@
             </div>
           </a>
         </li>
-        <li>
-          <a class="item">
-            <span class="name">Da Bubble</span>
+        <!-- <li>
+          <a class="item" (mouseenter)="showProjectPreview('Da Bubble')" (mouseleave)="hideProjectPreview()">
+            <span class="name">Da Bubble <img class="arrow-icon" src="/assets/icons/arrow_outward.png" alt="" /></span>
             <div class="tech-container">
               <span class="tech">Angular</span>
               <div class="dividing-line"></div>
@@ -43,10 +43,13 @@
               <span class="tech">Typescript</span>
             </div>
           </a>
-        </li>
+        </li> -->
       </ul>
     </div>
-    <div class="projects-preview"><app-project-overlay></app-project-overlay></div>
+    <div class="projects-preview">
+      <img *ngIf="getActiveProjectImage()" [src]="getActiveProjectImage()" alt="Project preview" class="preview-image" />
+    </div>
+    <app-project-overlay class="overlay" *ngIf="overlayOpen" (closed)="closeOverlay()"></app-project-overlay>
   </div>
 </section>
 
