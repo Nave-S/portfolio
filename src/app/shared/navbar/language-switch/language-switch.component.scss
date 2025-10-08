@@ -1,0 +1,76 @@
+:host {
+  --bg: #1c1c1c;
+  --fc: #ffffff;
+  --muted: #99a3ad;
+  --accent: #3dcfb6;
+}
+
+.lang-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.switch {
+  position: relative;
+  width: 80px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg);
+  transition: 0.4s;
+  border-radius: 35px;
+  border: solid 1px var(--accent);
+}
+
+.lang-option {
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 700;
+  width: 24px;
+  text-align: center;
+  z-index: 1;
+  transition: color 0.3s;
+}
+
+.slider:before {
+  content: '';
+  position: absolute;
+  height: 24px;
+  width: 44px;
+  left: 2px;
+  background-color: var(--accent);
+  transform: translateX(0);
+  transition: 0.4s;
+  border-radius: 35px;
+}
+
+input:not(:checked) ~ .slider .lang-en {
+  color: var(--fc);
+}
+
+input:checked ~ .slider .lang-de {
+  color: var(--fc);
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+}
+

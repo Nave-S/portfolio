@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../main-content/hero/navbar/navbar.component';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
 
 @Component({
   selector: 'app-imprint',

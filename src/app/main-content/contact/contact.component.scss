@@ -130,6 +130,11 @@ textarea {
   color: var(--muted);
 }
 
+input:hover::placeholder,
+textarea:hover::placeholder {
+  color: var(--fc);
+}
+
 .error {
   margin-top: 8px;
   color: red;

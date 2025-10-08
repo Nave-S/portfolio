@@ -9,6 +9,8 @@
 button {
   appearance: none;
   border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 @font-face {
@@ -20,7 +22,7 @@ button {
 }
 
 .fontKarla {
-  font-family: "Karla";
+  font-family: "Karla", sans-serif;
 }
 
 @font-face {
@@ -32,6 +34,6 @@ button {
     format("ttf");
 }
 
-.fontKarla {
-  font-family: "FiraCode";
+.firaCode {
+  font-family: "FiraCode", monospace;
 }

@@ -1,73 +1,43 @@
 :host {
   --bg: #1c1c1c;
-  --bg-2: #0b1f1f;
-  --fc: #d9d9d9;
+  --fc: #ffffff;
   --muted: #99a3ad;
   --accent: #3dcfb6;
-  --ring: rgba(47, 224, 197, 0.35);
-  --marquee-text: #3dcfb6;
-  --scroll-btn: #3dcfb6;
 }
 
-.topbar {
+.top-bar {
   position: relative;
   z-index: 3;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
   padding-left: 96px;
   padding-right: 96px;
   padding-top: 24px;
   padding-bottom: 24px;
-  // background: linear-gradient(0deg, #0000 13.56%, #0009 84.01% 84.01%);
+  font-family: 'FiraCode', monospace;
 }
 
-.lang-toggle {
+.navbar-language-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.35rem;
-
-  .chip {
-    border: 0;
-    padding: 0.35rem 0.55rem;
-    border-radius: 999px;
-    font-size: 0.85rem;
-    font-family: 'FiraCode', sans-serif;
-    font-weight: 600;
-    background: rgba(255, 255, 255, 0.06);
-    color: var(--muted);
-    cursor: pointer;
-    transition: transform 0.12s ease, color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-
-    &.active {
-      color: #0a1a17;
-      background: var(--accent);
-      box-shadow: 0 0 0 0.25rem var(--ring);
-    }
-    &:hover {
-      transform: translateY(-1px);
-    }
-    &:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-    }
-  }
+  gap: 24px;
 }
 
 .nav {
   display: flex;
-  gap: 1.5rem;
   justify-content: center;
+  gap: 32px;
   a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'FiraCode', sans-serif;
+    font-family: 'FiraCode', monospace;
     text-decoration: none;
     color: var(--muted);
-    font-weight: 600;
+    font-weight: 200;
+    font-size: 20px;
     transition: color 0.2s ease, text-shadow 0.2s ease;
     padding-top: 8px;
     &:hover {
@@ -91,30 +61,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.6rem;
+  gap: 8px;
   text-decoration: none;
   color: var(--fg);
+  cursor: pointer;
 
   .mark {
     width: 32px;
     height: 40px;
-    display: grid;
-    place-items: center;
-    // border-radius: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 800;
-    font-size: 40px;
-    letter-spacing: 0.04em;
-    color: #3dcfb6;
-    transform: translateY(22%) rotate(270deg);
-    // box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    font-size: 56px;
+    color: var(--accent);
+    transform: rotate(270deg);
   }
 
   .brand-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 32px;
-    line-height: 0.95;
     font-weight: 800;
-    letter-spacing: 0.02em;
-    opacity: 0.9;
   }
 
   &:hover .mark {
