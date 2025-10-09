@@ -3,5 +3,18 @@
     "ABOUT": "About me",
     "SKILLS": "Skills",
     "PROJECTS": "Projects"
+  },
+  "HERO": {
+    "KICKER": "Frontend Developer",
+
+    "CTA_CHECK": "Check my work",
+    "CTA_CONTACT": "Contact me",
+
+    "TICKER": {
+      "REMOTE": "Available for remote work",
+      "ROLE": "Frontend Developer",
+      "BASED": "Based near Unna",
+      "OPEN": "Open to work"
+    }
   }
 }

@@ -5,67 +5,50 @@
 
     <div class="social">
       <a class="v-email" [href]="" aria-label="Send email"><span>nawiedsyed&#64;gmx.de</span></a>
-      <a [href]="" target="_blank" rel="noreferrer" aria-label="GitHub" class="icon">
+      <a class="v-email-icon" [href]="" aria-label="Send email"><img src="assets/icons/mail.png" alt="" /></a>
+      <a href="https://github.com/Nave-S" target="_blank" rel="noreferrer" aria-label="GitHub" class="icon">
         <img src="assets/icons/github.png" alt="Github" />
       </a>
-      <a [href]="" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="icon">
+      <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="icon">
         <img src="assets/icons/linkedin.png" alt="Linkedin" />
       </a>
       <div class="spacer-right"></div>
     </div>
 
     <main class="center">
-      <h2 class="kicker">Frontend Developer</h2>
+      <h2 class="kicker">{{ 'HERO.KICKER' | translate }}</h2>
       <h1 class="title">Nawied Syed</h1>
       <div class="cta">
-        <button class="btn outline" href="#projects"><span>Check my work</span></button>
-        <button class="btn solid" href="#projects"><span>Contact me</span></button>
+        <button class="btn outline" href="#projects">
+          <span>{{ 'HERO.CTA_CHECK' | translate }}</span>
+        </button>
+        <button class="btn solid" href="#projects">
+          <span>{{ 'HERO.CTA_CONTACT' | translate }}</span>
+        </button>
       </div>
     </main>
 
     <div class="scroll">
-      <div class="circle"><span class="arrow">↓</span></div>
+      <div class="circle">
+        <span class="arrow"><img src="assets/icons/hero_arrow.png" alt="arrow" /></span>
+      </div>
       <div class="spacer-left"></div>
     </div>
   </div>
 
+  <p id="ticker-text" class="screenreader-only" aria-live="off">
+    @for (key of tickerKeys; track key; let last = $last) {
+    <span>{{ key | translate }}</span
+    >}
+  </p>
+
   <div class="ticker" aria-hidden="true">
     <div class="track">
-      <span>Available for remote work</span>
+      @for (rArray of repeatArray; track $index; let lastRepeat = $last) { @for (key of tickerKeys; track key; let lastKey = $last) {
+      <span>{{ key | translate }}</span>
+      @if (!(lastKey && lastRepeat)) {
       <span aria-hidden="true"> • </span>
-      <span>Frontend Developer</span>
-      <span aria-hidden="true"> • </span>
-      <span>Based near Unna</span>
-      <span aria-hidden="true"> • </span>
-      <span>Open to work</span>
-      <span aria-hidden="true"> • </span>
-
-      <span>Available for remote work</span>
-      <span aria-hidden="true"> • </span>
-      <span>Frontend Developer</span>
-      <span aria-hidden="true"> • </span>
-      <span>Based near Unna</span>
-      <span aria-hidden="true"> • </span>
-      <span>Open to work</span>
-      <span aria-hidden="true"> • </span>
-
-      <span>Available for remote work</span>
-      <span aria-hidden="true"> • </span>
-      <span>Frontend Developer</span>
-      <span aria-hidden="true"> • </span>
-      <span>Based near Unna</span>
-      <span aria-hidden="true"> • </span>
-      <span>Open to work</span>
-      <span aria-hidden="true"> • </span>
-
-      <span>Available for remote work</span>
-      <span aria-hidden="true"> • </span>
-      <span>Frontend Developer</span>
-      <span aria-hidden="true"> • </span>
-      <span>Based near Unna</span>
-      <span aria-hidden="true"> • </span>
-      <span>Open to work</span>
-      <span aria-hidden="true"> • </span>
+      } } }
     </div>
   </div>
 </section>

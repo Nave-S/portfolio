@@ -3,5 +3,18 @@
     "ABOUT": "Über mich",
     "SKILLS": "Fähigkeiten",
     "PROJECTS": "Projekte"
+  },
+  "HERO": {
+    "KICKER": "Frontend-Entwickler",
+
+    "CTA_CHECK": "Meine Arbeit ansehen",
+    "CTA_CONTACT": "Kontaktiere mich",
+
+    "TICKER": {
+      "REMOTE": "Verfügbar für Remote-Arbeit",
+      "ROLE": "Frontend-Entwickler",
+      "BASED": "Wohnhaft in der Nähe von Unna",
+      "OPEN": "Offen für neue Projekte"
+    }
   }
 }

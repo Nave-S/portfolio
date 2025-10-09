@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { LanguageService } from '../../../../app/services/language.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { LanguageService } from '../../../../app/services/language.service';
   styleUrl: './language-switch.component.scss',
 })
 export class LanguageSwitchComponent {
-  private lang = inject(LanguageService);
+  constructor(private lang: LanguageService) {}
 
   get isDe() {
     return this.lang.current() === 'de';

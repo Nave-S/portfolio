@@ -158,12 +158,12 @@
     color: var(--fc);
   }
   49% {
-    transform: translateX(-100%);
+    transform: translateX(100%);
     opacity: 0;
     color: var(--fc);
   }
   50% {
-    transform: translateX(100%);
+    transform: translateX(-100%);
     opacity: 0;
     color: var(--accent);
   }
@@ -194,6 +194,31 @@
   }
 }
 
+.v-email-icon {
+  display: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.7rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.12s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+
+  img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.9;
+  }
+  &:hover {
+    transform: translateY(-2px);
+    background: rgba(47, 224, 197, 0.12);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 0.25rem var(--ring);
+  }
+}
+
 .scroll {
   position: absolute;
   left: 0;
@@ -205,9 +230,9 @@
   flex-direction: column;
   gap: 16px;
   margin-left: 96px;
+  cursor: pointer;
 
   .circle {
-    cursor: pointer;
     width: 30px;
     height: 48px;
     border-radius: 35px;
@@ -215,7 +240,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: float 2.6s ease-in-out infinite;
 
     &:hover {
       border: 1px dashed var(--fc);
@@ -223,16 +247,13 @@
       opacity: 1;
       text-shadow: 0 0 10px rgba(47, 224, 197, 0.35);
 
-      .arrow {
-        color: var(--fc); // Farbe beim Hover auf .circle
-        opacity: 1;
-        text-shadow: 0 0 10px rgba(47, 224, 197, 0.35);
+      .arrow img {
+        filter: brightness(0) saturate(100%) invert(67%) sepia(93%) saturate(373%) hue-rotate(131deg) brightness(95%) contrast(88%);
       }
     }
 
-    .arrow {
-      font-size: 1.1rem;
-      color: var(--accent);
+    .arrow img {
+      animation: float 2.6s ease-in-out infinite;
     }
   }
 }
@@ -255,17 +276,18 @@
 }
 
 .ticker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  width: 110%;
-  left: 50%;
-  transform: translateX(-50%) rotate(-6deg);
-  transform-origin: bottom left;
-  bottom: 0rem;
+  width: 120%;
+  height: 64px;
+  transform: rotate(-3deg);
+  left: -4px;
+  bottom: clamp(2rem, 3.2vw, 5.5rem);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.08));
   box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding-block: 0.9rem;
   z-index: 99;
   overflow: hidden;
 
@@ -338,5 +360,59 @@
   height: 200px;
   border: solid 1px;
   width: 1px;
+}
+
+/* --------------Screenreader Test-------------- */
+.screenreader-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Animation aus */
+  .ticker .track {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  /* Statischer Text */
+  .screenreader-only {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    clip: auto !important;
+    clip-path: none !important;
+    white-space: normal !important;
+  }
+
+  /* Animation ausblenden */
+  .ticker {
+    display: none !important;
+  }
+}
+/* --------------Screenreader Test-------------- */
+
+@media (max-width: 768px) {
+  .v-email {
+    display: none;
+  }
+  .v-email-icon {
+    display: flex;
+  }
+  .scroll {
+    margin-left: 24px;
+  }
+  .social {
+    margin-right: 16px;
+  }
 }
 
