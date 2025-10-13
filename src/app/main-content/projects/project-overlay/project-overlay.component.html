@@ -2,18 +2,36 @@
   <div class="backdrop" (click)="onBackdropClick()" aria-hidden="true"></div>
   <div class="overlay-content">
     <div class="panel-left" role="dialog" aria-modal="true">
-      <h1 class="panel__title">01</h1>
-      <h2 class="panel__title">Join</h2>
-      <span>What is this project about</span>
+      <h1 class="panel-h1">01</h1>
+      <h2 class="panel-h2">Join</h2>
+      <h3 class="panel-h3">What is this project about</h3>
       <span
-        >Task manager inspiered by the Kanban System. Crat and organize tasks using drag and drop functions, assig users and
-        categories</span
-      >
+        >Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.
+      </span>
+      <div class="tech">
+        <img class="tech-icon" src="../../../../assets/icons/html_green.png" alt="" />
+        <span>HTML</span>
+        <img class="tech-icon" src="../../../../assets/icons/css_green.png" alt="" />
+        <span>CSS</span>
+        <img class="tech-icon" src="../../../../assets/icons/javascript_green.png" alt="" />
+        <span>JavaScript</span>
+        <img class="tech-icon" src="../../../../assets/icons/firebase_green.png" />
+        <span>Firebase</span>
+      </div>
+
+      <div class="btn-position">
+        <button class="btn"><span>GitHub</span><img class="arrow-icon" src="../../../../assets/icons/arrow_green.png" alt="" /></button>
+        <button class="btn"><span>Live Test</span><img class="arrow-icon" src="../../../../assets/icons/arrow_green.png" alt="" /></button>
+      </div>
     </div>
-    <div class="panel__right">
-      <button type="button" class="panel__close" (click)="close()" aria-label="Close">×</button>
-      <img class="preview-img" src="/assets/images/join.png" alt="" />
-      <button type="button" class="panel__next" aria-label="Next">Next project-></button>
+    <div class="panel-right">
+      <button type="button" class="panel-close" (click)="close()" aria-label="Close">
+        <img class="close-icon" src="../../../../assets/icons/close_small.png" alt="" />
+      </button>
+      <img class="preview-img" src="../../../../assets/images/join_placeholder.png" alt="" />
+      <button type="button" class="panel-next" aria-label="Next">
+        <span>Next project</span><img src="../../../../assets/icons/next_arrow.png" alt="" />
+      </button>
     </div>
   </div>
 </div>

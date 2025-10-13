@@ -1,11 +1,17 @@
 <header class="top-bar">
-  <div class="navbar-language-container" role="tablist" aria-label="Language">
-    <app-language-switch></app-language-switch>
-
-    <nav class="nav">
-      <a href="#about">{{ 'NAVBAR.ABOUT' | translate }}<img class="point-position" src="assets/icons/point_green.png" /></a>
-      <a href="#skills">{{ 'NAVBAR.SKILLS' | translate }}<img class="point-position" src="assets/icons/point_green.png" /></a>
-      <a href="#projects">{{ 'NAVBAR.PROJECTS' | translate }}<img class="point-position" src="assets/icons/point_green.png" /></a>
+  <div class="nav-container" [class.open]="isMenuOpen">
+    <nav class="nav" role="tablist" aria-label="Navigation">
+      <app-language-switch class="d-none-first"></app-language-switch>
+      <a href="#about" (click)="closeMenu()"
+        >{{ 'NAVBAR.ABOUT' | translate }}<img class="point-position" src="assets/icons/point_green.png"
+      /></a>
+      <a href="#skills" (click)="closeMenu()"
+        >{{ 'NAVBAR.SKILLS' | translate }}<img class="point-position" src="assets/icons/point_green.png"
+      /></a>
+      <a href="#projects" (click)="closeMenu()"
+        >{{ 'NAVBAR.PROJECTS' | translate }}<img class="point-position" src="assets/icons/point_green.png"
+      /></a>
+      <app-language-switch class="d-none"></app-language-switch>
     </nav>
   </div>
 
@@ -13,5 +19,13 @@
     <span class="mark">NS</span>
     <span class="brand-text">Nawied<br />Syed</span>
   </a>
+
+  <div class="navbar-language-container">
+    <button class="burger-menu-button" (click)="toggleMenu()" aria-label="Toggle navigation menu">
+      <div class="burger-bar"></div>
+      <div class="burger-bar"></div>
+      <div class="burger-bar"></div>
+    </button>
+  </div>
 </header>
 

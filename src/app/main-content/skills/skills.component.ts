@@ -20,7 +20,6 @@ export class SkillsComponent {
     { label: 'Git', icon: 'git.png' },
     { label: 'REST-API', icon: 'rest_api.png' },
     { label: 'Scrum', icon: 'scrum.png' },
-    { label: 'Growth mindset', icon: 'growth_mindset.png' },
   ];
 }
 

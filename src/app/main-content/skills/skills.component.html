@@ -1,4 +1,4 @@
-<section class="skills-section" aria-labelledby="skills-title">
+<section id="skills" class="skills-section" aria-labelledby="skills-title">
   <div class="content">
     <div class="card-title">
       <p class="kicker">Technologies</p>
@@ -13,7 +13,7 @@
         <h3 class="pitch"><span class="strong"></span><span>You need</span>&nbsp;<span class="pitch-second-half">another skill?</span></h3>
         <p class="pitch-p">Feel free to contact me. I look forward to expanding on my previous knowledge.</p>
 
-        <button class="btn">Lets Talk</button>
+        <a href="#contact" class="btn">Let's Talk</a>
       </article>
     </div>
     <div class="skills" role="list">
@@ -23,6 +23,19 @@
         <span class="label">{{ skill.label }}</span>
       </div>
       }
+
+      <div class="skill-tooltip tooltip">
+        <img src="../../../assets/icons/growth_mindset.png" alt="" />
+        <span class="label">Growth mindset</span>
+
+        <div class="tip" role="tooltip" id="tip-growth">
+          <span>I have a special interest in learning</span>
+          <div class="img-position">
+            <img class="icon" src="../../../assets/icons/react.png" alt="" />
+            <img class="icon" src="../../../assets/icons/vue.png" alt="" />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

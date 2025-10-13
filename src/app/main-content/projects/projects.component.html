@@ -1,4 +1,4 @@
-<section class="projects" aria-labelledby="projects-title">
+<section id="projects" class="projects" aria-labelledby="projects-title">
   <div class="overall-container">
     <div class="Featured-Projects-container">
       <p class="kicker">Portfolio</p>
@@ -21,7 +21,7 @@
           </a>
         </li>
         <li>
-          <a class="item" (mouseenter)="showProjectPreview('El Pollo Loco')" (mouseleave)="hideProjectPreview()">
+          <a class="item" (click)="openOverlay()" (mouseenter)="showProjectPreview('El Pollo Loco')" (mouseleave)="hideProjectPreview()">
             <span class="name">El Pollo Loco <img class="arrow-icon" src="/assets/icons/arrow_outward.png" alt="" /></span>
             <div class="tech-container">
               <span class="tech">HTML</span>

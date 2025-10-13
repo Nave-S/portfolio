@@ -61,13 +61,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
   text-decoration: none;
   color: var(--fg);
   cursor: pointer;
 
   .mark {
-    width: 32px;
+    width: 48px;
     height: 40px;
     display: flex;
     justify-content: center;
@@ -101,14 +100,124 @@
   }
 }
 
+// Desktop Ansicht
+@media (min-width: 769px) {
+  .d-none {
+    display: none;
+  }
+  .navbar-language-container {
+    display: none;
+  }
+  .nav-container {
+    position: static;
+    padding-top: 0;
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+
+      a {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
 @media (min-width: 860px) {
   .nav {
     display: flex;
   }
 }
+@media (max-width: 880px) {
+  .top-bar {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}
 @media (max-width: 640px) {
   .brand .brand-text {
     display: none;
+  }
+}
+
+.burger-menu-button {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 10px;
+
+  .burger-bar {
+    width: 32px;
+    height: 2px;
+    background-color: var(--fc);
+    margin: 8px 0;
+  }
+}
+
+// Mobile Ansicht
+@media (max-width: 768px) {
+  .d-none-first {
+    display: none;
+  }
+
+  .burger-menu-button {
+    display: block;
+    z-index: 200;
+  }
+
+  .navbar-language-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav {
+    gap: 8px;
+  }
+
+  .nav-container {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 80px;
+    right: -100%;
+    width: 240px;
+    height: 256px;
+    color: var(--fc);
+    background: radial-gradient(1200px 600px at 85% 0%, rgba(17, 110, 102, 0.25), transparent 60%),
+      radial-gradient(800px 500px at 0% 10%, rgba(6, 67, 73, 0.35), transparent 60%),
+      linear-gradient(135deg, var(--bg) 0%, var(--bg-2) 100%);
+    overflow: hidden;
+    isolation: isolate;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    z-index: 100;
+    border-radius: 35px;
+
+    &.open {
+      right: 16px;
+    }
+
+    .nav {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .point-position {
+    margin-top: 8px;
   }
 }
 
