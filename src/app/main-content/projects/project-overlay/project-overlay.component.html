@@ -2,34 +2,33 @@
   <div class="backdrop" (click)="onBackdropClick()" aria-hidden="true"></div>
   <div class="overlay-content">
     <div class="panel-left" role="dialog" aria-modal="true">
-      <h1 class="project-number">01</h1>
-      <h2 class="project-title">Join</h2>
-      <h3 class="project-info-title">What is this project about</h3>
-      <span class="project-description"
-        >Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.
-      </span>
+      <h1 class="project-number">{{ activeProject.number }}</h1>
+      <h2 class="project-title">{{ activeProject.title }}</h2>
+      <h3 class="project-info-title">{{ activeProject.infoTitle }}</h3>
+      <span class="project-description">{{ activeProject.description }}</span>
+
       <div class="tech">
-        <img class="tech-icon" src="../../../../assets/icons/html_green.png" alt="" />
-        <span>HTML</span>
-        <img class="tech-icon" src="../../../../assets/icons/css_green.png" alt="" />
-        <span>CSS</span>
-        <img class="tech-icon" src="../../../../assets/icons/javascript_green.png" alt="" />
-        <span>JavaScript</span>
-        <img class="tech-icon" src="../../../../assets/icons/firebase_green.png" />
-        <span>Firebase</span>
+        @for(tech of activeProject.tech; track tech.name) {
+        <img class="tech-icon" [src]="tech.icon" [alt]="tech.alt" />
+        <span>{{ tech.name }}</span>
+        }
       </div>
 
       <div class="btn-position">
-        <button class="btn"><span>GitHub</span><img class="arrow-icon" src="../../../../assets/icons/arrow_green.png" alt="" /></button>
-        <button class="btn"><span>Live Test</span><img class="arrow-icon" src="../../../../assets/icons/arrow_green.png" alt="" /></button>
+        <a [href]="activeProject.buttons[0].link" target="_blank" class="btn"
+          ><span>GitHub</span><img class="arrow-icon" src="../../../../assets/icons/arrow_green.png" alt=""
+        /></a>
+        <a [href]="activeProject.buttons[1].link" target="_blank" class="btn"
+          ><span>Live Test</span><img class="arrow-icon" src="../../../../assets/icons/arrow_green.png" alt=""
+        /></a>
       </div>
     </div>
     <div class="panel-right">
       <button type="button" class="panel-close" (click)="close()" aria-label="Close">
         <img class="close-icon" src="../../../../assets/icons/close_small.png" alt="" />
       </button>
-      <img class="preview-img" src="../../../../assets/images/join_placeholder.png" alt="" />
-      <button type="button" class="panel-next" aria-label="Next">
+      <img class="preview-img" src="{{ activeProject.previewImage }}" alt="" />
+      <button type="button" class="panel-next" aria-label="Next" (click)="nextProject()">
         <span>Next project</span><img src="../../../../assets/icons/next_arrow.png" alt="" />
       </button>
     </div>

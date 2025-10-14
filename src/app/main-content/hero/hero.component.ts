@@ -15,7 +15,7 @@ export class HeroComponent {
   constructor(private lang: LanguageService) {}
 
   tickerKeys = ['HERO.TICKER.REMOTE', 'HERO.TICKER.ROLE', 'HERO.TICKER.BASED', 'HERO.TICKER.OPEN'];
-  repeatArray = Array.from({ length: 4 });
+  repeatArray = Array.from({ length: 16 });
 
   setLang(lang: 'en' | 'de') {
     this.lang.use(lang);

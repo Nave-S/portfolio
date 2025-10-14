@@ -7,7 +7,11 @@
 
       <ul class="list" role="list">
         <li>
-          <a class="item" (click)="openOverlay('Join')" (mouseenter)="showProjectPreview('Join')" (mouseleave)="hideProjectPreview()">
+          <a
+            class="item"
+            (click)="$event.stopPropagation(); openOverlay('join')"
+            (mouseenter)="showProjectPreview('join')"
+            (mouseleave)="hideProjectPreview()">
             <span class="name">Join <img class="arrow-icon" src="/assets/icons/arrow_outward.png" alt="" /></span>
             <div class="tech-container">
               <span class="tech">HTML</span>
@@ -23,8 +27,8 @@
         <li>
           <a
             class="item"
-            (click)="openOverlay('El Pollo Loco')"
-            (mouseenter)="showProjectPreview('El Pollo Loco')"
+            (click)="$event.stopPropagation(); openOverlay('elpolloloco')"
+            (mouseenter)="showProjectPreview('elpolloloco')"
             (mouseleave)="hideProjectPreview()">
             <span class="name">El Pollo Loco <img class="arrow-icon" src="/assets/icons/arrow_outward.png" alt="" /></span>
             <div class="tech-container">
@@ -53,7 +57,12 @@
     <div class="projects-preview">
       <img *ngIf="getActiveProjectImage()" [src]="getActiveProjectImage()" alt="Project preview" class="preview-image" />
     </div>
-    <app-project-overlay class="overlay" *ngIf="overlayOpen" (closed)="closeOverlay()"></app-project-overlay>
+    <app-project-overlay
+      *ngIf="overlayOpen"
+      [projectName]="activeProject!"
+      (projectChange)="onProjectChange($event)"
+      (closed)="closeOverlay()">
+    </app-project-overlay>
   </div>
 </section>
 

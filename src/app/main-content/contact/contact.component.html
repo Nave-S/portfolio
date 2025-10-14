@@ -18,26 +18,54 @@
       <span class="tail-second">Let’s talk!</span>
     </div>
 
-    <form class="right">
+    <form (ngSubmit)="onSubmit(contactForm)" class="right" #contactForm="ngForm">
       <label for="name" class="question">What's your name?</label>
-      <input id="name" type="text" formControlName="name" placeholder="Your name goes here" />
+      <input
+        #nameInput="ngModel"
+        [(ngModel)]="contactData.name"
+        minlength="4"
+        id="name"
+        type="text"
+        name="name"
+        placeholder="Your name goes here"
+        required />
+      @if (!nameInput.valid && (nameInput.touched || contactForm.submitted)) {
       <div class="error">Please provide your name.</div>
-
+      }
       <div class="field">
         <label for="email" class="question">What's your email?</label>
-        <input id="email" type="email" formControlName="email" placeholder="youremail@email.com" />
+        <input
+          #emailInput="ngModel"
+          [(ngModel)]="contactData.email"
+          id="email"
+          type="email"
+          name="email"
+          placeholder="youremail@email.com"
+          required
+          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" />
+        @if (!emailInput.valid && (emailInput.touched || contactForm.submitted)) {
         <div class="error">Please provide a valid email.</div>
+        }
       </div>
 
       <div class="field">
         <label for="message" class="question">How can I help you?</label>
-        <textarea id="message" formControlName="message" placeholder="Hello Nawied, I am interested in…"></textarea>
+        <textarea
+          #messageInput="ngModel"
+          [(ngModel)]="contactData.message"
+          minlength="4"
+          id="message"
+          name="message"
+          placeholder="Hello Nawied, I am interested in…"
+          required></textarea>
+        @if (!messageInput.valid && (messageInput.touched || contactForm.submitted)) {
         <div class="error">Please add a short message.</div>
+        }
         <div class="field-last"></div>
       </div>
 
       <label class="consent">
-        <input type="checkbox" formControlName="consent" />
+        <input type="checkbox" name="privacy" [(ngModel)]="contactData.privacy" #privacyInput="ngModel" required />
         <span class="box" aria-hidden="true"></span>
         <div class="consent-text-group">
           <span class="consent-text">
@@ -45,7 +73,9 @@
           </span>
         </div>
       </label>
+      @if (!privacyInput.valid && (privacyInput.touched || contactForm.submitted)){
       <div class="error">Please accept the privacy policy.</div>
+      }
       <div class="btn-position">
         <button class="btn" type="submit">Say Hello ;)</button>
       </div>

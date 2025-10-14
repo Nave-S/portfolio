@@ -11,42 +11,48 @@ import { ProjectOverlayComponent } from './project-overlay/project-overlay.compo
 export class ProjectsComponent {
   overlayOpen = false;
   activeProject: string | null = null;
-  projects = ['Join', 'El Pollo Loco' /*, 'Da Bubble'*/];
+  showPreview = true;
+  projects = ['join', 'elpolloloco' /*, 'Da Bubble'*/];
 
   projectImages = {
-    'Join': '/assets/images/join.png',
-    'El Pollo Loco': '/assets/images/el_pollo_loco.png',
+    'join': '/assets/images/join.png',
+    'elpolloloco': '/assets/images/el_pollo_loco.png',
     // 'Da Bubble': '/assets/images/projects/da-bubble-preview.jpg',
   };
 
-  openOverlay(projects: string) {
-    switch (projects) {
-      case 'Join':
-        this.overlayOpen = true;
-        break;
-      case 'El Pollo Loco':
-        this.overlayOpen = true;
-        break;
-      default:
-        this.overlayOpen = false;
-        break;
-    }
+  getActiveProjectImage(): string | null {
+    if (!this.showPreview || this.overlayOpen) return null;
+    return this.activeProject ? this.projectImages[this.activeProject as keyof typeof this.projectImages] ?? null : null;
+  }
+
+  openOverlay(projectName: string) {
+    this.showPreview = false;
+    this.activeProject = projectName;
+    this.overlayOpen = true;
   }
 
   closeOverlay() {
     this.overlayOpen = false;
+    this.showPreview = false;
+  }
+
+  onProjectChange(projectName: string) {
+    this.activeProject = projectName;
+    this.showPreview = false;
   }
 
   showProjectPreview(projectName: string): void {
-    this.activeProject = projectName;
+    if (!this.overlayOpen) {
+      this.showPreview = true;
+      this.activeProject = projectName;
+    }
   }
 
   hideProjectPreview(): void {
-    this.activeProject = null;
-  }
-
-  getActiveProjectImage(): string | null {
-    return this.activeProject ? this.projectImages[this.activeProject as keyof typeof this.projectImages] ?? null : null;
+    if (!this.overlayOpen) {
+      this.showPreview = true;
+      this.activeProject = null;
+    }
   }
 }
 
