@@ -99,7 +99,7 @@
       transition: color 0.2s;
     }
     &:hover span {
-      animation: btnTextSlideOutline 1s cubic-bezier(0.77, 0, 0.18, 1);
+      animation: btnTextSlideOutline 0.6s cubic-bezier(0.77, 0, 0.18, 1);
       color: var(--accent);
     }
     &:hover {

@@ -7,7 +7,7 @@
 
       <ul class="list" role="list">
         <li>
-          <a class="item" (click)="openOverlay()" (mouseenter)="showProjectPreview('Join')" (mouseleave)="hideProjectPreview()">
+          <a class="item" (click)="openOverlay('Join')" (mouseenter)="showProjectPreview('Join')" (mouseleave)="hideProjectPreview()">
             <span class="name">Join <img class="arrow-icon" src="/assets/icons/arrow_outward.png" alt="" /></span>
             <div class="tech-container">
               <span class="tech">HTML</span>
@@ -21,7 +21,11 @@
           </a>
         </li>
         <li>
-          <a class="item" (click)="openOverlay()" (mouseenter)="showProjectPreview('El Pollo Loco')" (mouseleave)="hideProjectPreview()">
+          <a
+            class="item"
+            (click)="openOverlay('El Pollo Loco')"
+            (mouseenter)="showProjectPreview('El Pollo Loco')"
+            (mouseleave)="hideProjectPreview()">
             <span class="name">El Pollo Loco <img class="arrow-icon" src="/assets/icons/arrow_outward.png" alt="" /></span>
             <div class="tech-container">
               <span class="tech">HTML</span>

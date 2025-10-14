@@ -11,6 +11,7 @@ import { ProjectOverlayComponent } from './project-overlay/project-overlay.compo
 export class ProjectsComponent {
   overlayOpen = false;
   activeProject: string | null = null;
+  projects = ['Join', 'El Pollo Loco' /*, 'Da Bubble'*/];
 
   projectImages = {
     'Join': '/assets/images/join.png',
@@ -18,9 +19,20 @@ export class ProjectsComponent {
     // 'Da Bubble': '/assets/images/projects/da-bubble-preview.jpg',
   };
 
-  openOverlay() {
-    this.overlayOpen = true;
+  openOverlay(projects: string) {
+    switch (projects) {
+      case 'Join':
+        this.overlayOpen = true;
+        break;
+      case 'El Pollo Loco':
+        this.overlayOpen = true;
+        break;
+      default:
+        this.overlayOpen = false;
+        break;
+    }
   }
+
   closeOverlay() {
     this.overlayOpen = false;
   }

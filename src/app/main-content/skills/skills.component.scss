@@ -104,10 +104,43 @@
   border: 1px solid transparent;
   width: 130px;
   height: 48px;
-  transition: transform 0.12s ease, box-shadow 0.2s ease;
+  transition: transform 0.12s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  will-change: transform;
+  span {
+    display: inline-block;
+    color: #062623;
+    transition: color 0.2s;
+  }
+  &:hover span {
+    animation: btnTextSlideSolid 0.6s cubic-bezier(0.77, 0, 0.18, 1);
+    color: var(--fc);
+  }
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 30px rgba(47, 224, 197, 0.35);
+  }
+}
+
+@keyframes btnTextSlideSolid {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+    color: #062623;
+  }
+  49% {
+    transform: translateX(-100%);
+    opacity: 0;
+    color: #062623;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 0;
+    color: white;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    color: white;
   }
 }
 
