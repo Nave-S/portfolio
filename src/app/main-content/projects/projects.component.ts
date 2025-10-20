@@ -26,8 +26,8 @@ export class ProjectsComponent {
   }
 
   projectImages = {
-    'join': '/assets/images/join.png',
-    'elpolloloco': '/assets/images/el_pollo_loco.png',
+    'join': './assets/images/join.png',
+    'elpolloloco': './assets/images/el_pollo_loco.png',
     // 'Da Bubble': '/assets/images/projects/da-bubble-preview.jpg',
   };
 

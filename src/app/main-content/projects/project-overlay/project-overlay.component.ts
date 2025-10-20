@@ -69,38 +69,38 @@ export class ProjectOverlayComponent {
           tech: [
             {
               nameKey: 'PROJECTS.OVERLAY.JOIN.TECH.HTML',
-              icon: 'assets/icons/html_green.png',
+              icon: './assets/icons/html_green.png',
               altKey: 'PROJECTS.OVERLAY.JOIN.TECH.HTML',
             },
             {
               nameKey: 'PROJECTS.OVERLAY.JOIN.TECH.CSS',
-              icon: 'assets/icons/css_green.png',
+              icon: './assets/icons/css_green.png',
               altKey: 'PROJECTS.OVERLAY.JOIN.TECH.CSS',
             },
             {
               nameKey: 'PROJECTS.OVERLAY.JOIN.TECH.JAVASCRIPT',
-              icon: 'assets/icons/javascript_green.png',
+              icon: './assets/icons/javascript_green.png',
               altKey: 'PROJECTS.OVERLAY.JOIN.TECH.JAVASCRIPT',
             },
             {
               nameKey: 'PROJECTS.OVERLAY.JOIN.TECH.FIREBASE',
-              icon: 'assets/icons/firebase_green.png',
+              icon: './assets/icons/firebase_green.png',
               altKey: 'PROJECTS.OVERLAY.JOIN.TECH.FIREBASE',
             },
           ],
           buttons: [
             {
               labelKey: 'PROJECTS.BUTTONS.GITHUB',
-              icon: 'assets/icons/arrow_green.png',
+              icon: './assets/icons/arrow_green.png',
               link: 'https://github.com/Nave-S/Join',
             },
             {
               labelKey: 'PROJECTS.BUTTONS.LIVE',
-              icon: 'assets/icons/arrow_green.png',
+              icon: './assets/icons/arrow_green.png',
               link: 'https://your-live-site',
             },
           ],
-          previewImage: 'assets/images/join_placeholder.png',
+          previewImage: './assets/images/join_placeholder.png',
         };
 
       case 'elpolloloco':
@@ -112,33 +112,33 @@ export class ProjectOverlayComponent {
           tech: [
             {
               nameKey: 'PROJECTS.OVERLAY.ELPOLLOLOCO.TECH.HTML',
-              icon: 'assets/icons/html_green.png',
+              icon: './assets/icons/html_green.png',
               altKey: 'PROJECTS.OVERLAY.ELPOLLOLOCO.TECH.HTML',
             },
             {
               nameKey: 'PROJECTS.OVERLAY.ELPOLLOLOCO.TECH.CSS',
-              icon: 'assets/icons/css_green.png',
+              icon: './assets/icons/css_green.png',
               altKey: 'PROJECTS.OVERLAY.ELPOLLOLOCO.TECH.CSS',
             },
             {
               nameKey: 'PROJECTS.OVERLAY.ELPOLLOLOCO.TECH.JAVASCRIPT',
-              icon: 'assets/icons/javascript_green.png',
+              icon: './assets/icons/javascript_green.png',
               altKey: 'PROJECTS.OVERLAY.ELPOLLOLOCO.TECH.JAVASCRIPT',
             },
           ],
           buttons: [
             {
               labelKey: 'PROJECTS.BUTTONS.GITHUB',
-              icon: 'assets/icons/arrow_green.png',
+              icon: './assets/icons/arrow_green.png',
               link: 'https://github.com/Nave-S/El-Pollo-Loco',
             },
             {
               labelKey: 'PROJECTS.OVERLAY.ELPOLLOLOCO.BUTTONS.LIVE',
-              icon: 'assets/icons/arrow_green.png',
+              icon: './assets/icons/arrow_green.png',
               link: 'https://your-live-site',
             },
           ],
-          previewImage: 'assets/images/el_pollo_loco_placeholder.png',
+          previewImage: './assets/images/el_pollo_loco_placeholder.png',
         };
 
       default:
@@ -154,7 +154,7 @@ export class ProjectOverlayComponent {
       descriptionKey: 'PROJECTS.OVERLAY.DEFAULT.DESCRIPTION',
       tech: [],
       buttons: [],
-      previewImage: 'assets/images/placeholder.png',
+      previewImage: './assets/images/placeholder.png',
     };
   }
 

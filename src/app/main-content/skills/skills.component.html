@@ -22,20 +22,20 @@
     <div class="skills" role="list">
       @for(skill of skills; track skill.label){
       <div class="skill">
-        <img src="assets/icons/{{ skill.icon }}" alt="" srcset="" />
+        <img src="./assets/icons/{{ skill.icon }}" alt="" srcset="" />
         <span class="label">{{ skill.label }}</span>
       </div>
       }
 
       <div class="skill-tooltip tooltip">
-        <img src="../../../assets/icons/growth_mindset.png" alt="" />
+        <img src="./assets/icons/growth_mindset.png" alt="" />
         <span class="label">Growth mindset</span>
 
         <div class="tip" role="tooltip" id="tip-growth">
           <span>{{ 'SKILLS.INTEREST' | translate }}</span>
           <div class="img-position">
-            <img class="icon" src="../../../assets/icons/react.png" alt="" />
-            <img class="icon" src="../../../assets/icons/vue.png" alt="" />
+            <img class="icon" src="./assets/icons/react.png" alt="" />
+            <img class="icon" src="./assets/icons/vue.png" alt="" />
           </div>
         </div>
       </div>
