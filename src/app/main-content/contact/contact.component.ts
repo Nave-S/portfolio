@@ -59,7 +59,7 @@ export class ContactComponent {
 
   private showSuccessMessage() {
     this.messageStatus.show = true;
-    this.messageStatus.text = 'Nachricht erfolgreich gesendet!';
+    this.messageStatus.text = 'CONTACT.FORM.SUCCESS_MESSAGE.MESSAGE';
     setTimeout(() => {
       this.messageStatus.show = false;
     }, 3000);

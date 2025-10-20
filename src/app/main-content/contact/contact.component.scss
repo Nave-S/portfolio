@@ -93,11 +93,11 @@
 .field {
   border-top: 2px solid var(--rule);
   padding-top: 18px;
+  padding-left: 32px;
 }
 
 .field-last {
   border-top: 2px solid var(--rule);
-  margin-top: 18px;
 }
 
 .question {
@@ -136,6 +136,11 @@ textarea:hover::placeholder {
   color: var(--fc);
 }
 
+.error-fields {
+  display: block;
+  min-height: 1.4em;
+}
+
 .error {
   margin-top: 8px;
   color: red;
@@ -147,6 +152,7 @@ textarea:hover::placeholder {
   align-items: center;
   gap: 10px;
   user-select: none;
+  margin-top: 18px;
 }
 
 .consent input {
@@ -222,6 +228,9 @@ textarea:hover::placeholder {
   font-weight: 800;
   cursor: pointer;
   transition: transform 0.12s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  font-family: 'Karla', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
 }
 .btn:hover {
   transform: translateY(-2px);
@@ -229,7 +238,7 @@ textarea:hover::placeholder {
   box-shadow: 0 10px 24px rgba(47, 224, 197, 0.35);
 }
 
-.message {
+.success-message {
   position: fixed;
   bottom: 50%;
   // right: 20px;

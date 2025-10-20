@@ -116,6 +116,9 @@
         "EMAIL": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
         "MESSAGE": "Bitte fügen Sie eine kurze Nachricht hinzu.",
         "PRIVACY": "Bitte akzeptieren Sie die Datenschutzerklärung."
+      },
+      "SUCCESS_MESSAGE": {
+        "MESSAGE": "Nachricht erfolgreich gesendet!"
       }
     }
   },

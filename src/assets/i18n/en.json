@@ -120,6 +120,9 @@
         "EMAIL": "Please enter a valid email address.",
         "MESSAGE": "Please add a short message.",
         "PRIVACY": "Please accept the privacy policy."
+      },
+      "SUCCESS_MESSAGE": {
+        "MESSAGE": "Message sent successfully!"
       }
     }
   },
