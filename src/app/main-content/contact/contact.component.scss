@@ -11,7 +11,7 @@
   // background: radial-gradient(1100px 600px at 0% 0%, rgba(47, 224, 197, 0.08), transparent 60%), var(--bg);
   background-color: var(--bg);
   padding-bottom: 144px;
-  font-family: 'FiraCode', sans-serif;
+  font-family: 'FiraCode', monospace;
   color: var(--fc);
   font-size: 18px;
   display: flex;
@@ -39,9 +39,10 @@
 .kicker {
   margin: 0 0 12px 0;
   color: var(--accent);
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: 1px;
-  font-size: 22px;
+  font-size: 24px;
+  font-family: 'Karla', sans-serif;
 }
 
 .headline {
@@ -50,15 +51,16 @@
   font-weight: 900;
   letter-spacing: 1px;
   line-height: 1.05;
-  font-size: 96px;
+  font-size: 64px;
 }
 
 .subhead {
   margin: 24px 0 8px 0;
   color: var(--accent);
-  font-weight: 700;
-  font-size: 28px;
   letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'Karla', sans-serif;
 }
 
 .lead {
@@ -67,20 +69,33 @@
   color: var(--fc);
   opacity: 0.9;
   line-height: 1.6;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'Karla', sans-serif;
+}
+
+.pitch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .tail {
   margin: 16px 0 0 0;
   color: var(--fc);
   font-weight: 700;
-  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Karla', sans-serif;
 }
 
 .tail-second {
   margin: 16px 0 0 0;
   color: var(--accent);
   font-weight: 700;
+  font-size: 16px;
+  font-family: 'Karla', sans-serif;
   text-decoration: none;
+  letter-spacing: 0.1em;
 }
 
 .right {
@@ -104,7 +119,7 @@
   display: block;
   margin: 0 0 8px 0;
   color: var(--accent);
-  font-weight: 700;
+  font-weight: 500;
   font-size: 24px;
   letter-spacing: 1px;
 }
@@ -129,6 +144,9 @@ textarea {
 
 ::placeholder {
   color: var(--muted);
+  font-family: 'Karla', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
 }
 
 input:hover::placeholder,
@@ -203,7 +221,8 @@ textarea:hover::placeholder {
 
 .consent-text {
   color: var(--fc);
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 400;
 }
 .consent-text a {
   color: var(--accent);
@@ -214,6 +233,7 @@ textarea:hover::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Karla', sans-serif;
 }
 
 .btn {
@@ -225,7 +245,6 @@ textarea:hover::placeholder {
   border: 1px solid rgba(255, 255, 255, 0.25);
   background: rgba(255, 255, 255, 0.05);
   color: var(--fc);
-  font-weight: 800;
   cursor: pointer;
   transition: transform 0.12s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   font-family: 'Karla', sans-serif;
@@ -241,13 +260,10 @@ textarea:hover::placeholder {
 .success-message {
   position: fixed;
   bottom: 50%;
-  // right: 20px;
   background-color: var(--bg);
-  // background-color: var(--accent);
   color: var(--fc);
   padding: 16px;
   border-radius: 35px;
-  // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
   border-color: var(--accent);
   box-shadow: 0 0 0 0.75rem var(--ring);

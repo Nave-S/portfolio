@@ -44,28 +44,30 @@
   flex-direction: column;
   position: relative;
   z-index: 2;
-  padding: clamp(2rem, 8vw, 6rem);
+  padding: 8px;
   padding-top: 218px;
   max-width: 1100px;
   margin: 0 auto;
 
   .kicker {
-    font-family: 'FiraCode', sans-serif;
+    font-family: 'FiraCode', monospace;
     letter-spacing: 0.12em;
     color: var(--fc);
-    font-size: clamp(1rem, 2.4vw, 1.6rem);
+    font-weight: 700;
+    font-size: clamp(24px, calc(0.9rem + 1.2vw), 40px);
     margin: 0 0 1rem 0;
     opacity: 0.9;
   }
 
   .title {
     font-family: 'Karla', sans-serif;
-    font-weight: 900;
-    font-size: clamp(2.6rem, 9.5vw, 7.2rem);
+    font-weight: 700;
+    font-size: clamp(62px, calc(1rem + 6vw), 128px);
     line-height: 0.95;
     letter-spacing: 0.01em;
     margin: 0 0 2.2rem 0;
     text-shadow: 0 10px 40px rgba(0, 0, 0, 0.65);
+    text-align: center;
   }
 
   .cta {
@@ -81,9 +83,10 @@
   padding: 0.9rem 1.25rem;
   border: solid 1px;
   border-radius: 35px;
-  font-weight: 700;
-  text-decoration: none;
   font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
   border: 1px solid rgba(255, 255, 255, 0.12);
   transition: transform 0.12s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   backdrop-filter: blur(4px);
@@ -180,6 +183,8 @@
   cursor: pointer;
   transform: translateY(-500%) rotate(270deg);
   font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
   color: var(--muted);
   text-decoration: none;
   letter-spacing: 0.04em;
@@ -197,8 +202,8 @@
 .v-email-icon {
   display: none;
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   align-items: center;
   justify-content: center;
   border-radius: 0.7rem;
@@ -207,8 +212,8 @@
   transition: transform 0.12s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 
   img {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     opacity: 0.9;
   }
   &:hover {
@@ -270,7 +275,7 @@
 
 .spacer-left {
   color: var(--scroll-btn);
-  height: 200px;
+  height: 240px;
   border: solid 1px;
   width: 1px;
 }
@@ -305,6 +310,9 @@
 
     span {
       margin-right: 3rem;
+      font-family: 'Karla', sans-serif;
+      font-size: 32px;
+      font-weight: 400;
     }
   }
 }
@@ -331,8 +339,8 @@
 
   .icon {
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -342,8 +350,8 @@
     transition: transform 0.12s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 
     img {
-      width: 24px;
-      height: 24px;
+      width: 32px;
+      height: 32px;
       opacity: 0.9;
     }
     &:hover {
@@ -357,7 +365,7 @@
 
 .spacer-right {
   background-color: #ffffff;
-  height: 200px;
+  height: 186px;
   border: solid 1px;
   width: 1px;
 }

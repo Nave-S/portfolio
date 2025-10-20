@@ -61,7 +61,7 @@
 }
 
 .title {
-  font-family: 'FiraCode', sans-serif;
+  font-family: 'FiraCode', monospace;
   font-size: 64px;
   font-weight: 700;
   color: var(--accent);
@@ -70,10 +70,12 @@
 .intro {
   line-height: 1.2;
   margin: 0 0 1rem;
+  font-weight: 400;
 }
 
 .pitch {
   font-size: 24px;
+  font-family: 'FiraCode', monospace;
   .strong {
     font-weight: 700;
   }
@@ -86,7 +88,8 @@
   }
 }
 .pitch-p {
-  color: var(--fc);
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .btn {

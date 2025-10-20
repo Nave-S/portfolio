@@ -10,21 +10,24 @@
 }
 
 .imprint {
-  height: 100vh;
+  position: relative;
+  height: auto;
   width: 100%;
   color: var(--fc);
   background: radial-gradient(1200px 600px at 85% 0%, rgba(17, 110, 102, 0.25), transparent 60%),
     radial-gradient(800px 500px at 0% 10%, rgba(6, 67, 73, 0.35), transparent 60%), linear-gradient(135deg, var(--bg) 0%, var(--bg-2) 100%);
   overflow: hidden;
   isolation: isolate;
+  font-family: 'Karla', sans-serif;
+  padding-bottom: 128px;
 }
 
-.tint {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(80% 70% at 50% 20%, transparent 40%, rgba(0, 0, 0, 0.55) 100%);
-  pointer-events: none;
-}
+// .tint {
+//   position: absolute;
+//   inset: 0;
+//   background: radial-gradient(80% 70% at 50% 20%, transparent 40%, rgba(0, 0, 0, 0.55) 100%);
+//   pointer-events: none;
+// }
 
 .content-wrapper {
   max-width: 1980px;
@@ -37,15 +40,19 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-left: 128px;
+  padding-right: 128px;
 }
 
 .title {
-  font-family: 'Karla', sans-serif;
+  font-family: 'FiraCode', monospace;
   font-weight: 700;
   color: var(--accent);
   font-size: 64px;
   line-height: 0.95;
   letter-spacing: 0.01em;
   text-shadow: 0 10px 40px rgba(0, 0, 0, 0.65);
+  margin-bottom: 64px;
+  margin-top: 51px;
 }
 

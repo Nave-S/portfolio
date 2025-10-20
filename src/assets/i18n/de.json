@@ -93,9 +93,9 @@
   },
 
   "CONTACT": {
-    "KICKER": "Kontakt",
+    "KICKER": "Kontaktiere mich",
     "TITLE": "Lass uns",
-    "TITLESEC": " zusammenarbeiten",
+    "TITLE_SEC": " zusammenarbeiten",
     "SUBTITLE": "Ein Problem zu lösen?",
     "INTRO": "Ich freue mich darauf, Ihre Projekte durch meine Arbeit zu unterstützen.",
     "PITCH": "Brauchen Sie einen Frontend-Entwickler?",
@@ -126,7 +126,7 @@
   "FOOTER": {
     "COUNTRY": "Deutschland",
     "ROLE": "Webentwickler",
-    "TEXT": "© 2024 Nawied Alle Rechte vorbehalten.",
+    "TEXT": "© 2025 Nawied Alle Rechte vorbehalten.",
     "LEGAL": "Impressum"
   },
 

@@ -60,7 +60,7 @@
 .project-title {
   margin: 0;
   font-size: 64px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--fc);
   font-family: 'FiraCode', monospace;
 }
@@ -68,11 +68,17 @@
 .project-info-title {
   margin: 0;
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--accent);
   margin-top: 40px;
   margin-bottom: 20px;
   font-family: 'FiraCode', monospace;
+}
+
+.project-description {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Karla', sans-serif;
 }
 
 .panel-close {
@@ -110,6 +116,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Karla', sans-serif;
   gap: 8px;
   border: 0;
   color: var(--accent);
@@ -140,6 +149,9 @@
   margin-top: 32px;
   margin-bottom: 40px;
   gap: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Karla', sans-serif;
   img {
     width: 21px;
     height: 24px;
@@ -162,13 +174,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px;
+  // padding: 24px;
+  padding: 0.1rem 1rem;
   border-radius: 100px;
   text-decoration: none;
   font-size: 18px;
+  font-weight: 400;
+  font-family: 'Karla', sans-serif;
   color: var(--fc);
   background: var(--bg);
-  font-weight: 400;
   border: 1px solid var(--fc);
   width: 142px;
   height: 48px;

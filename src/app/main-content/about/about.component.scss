@@ -106,6 +106,9 @@
   color: var(--fc);
   opacity: 0.9;
   line-height: 1.2;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .bullets {
@@ -126,6 +129,7 @@
 
   p {
     color: var(--fc);
+    font-weight: 400;
   }
 }
 

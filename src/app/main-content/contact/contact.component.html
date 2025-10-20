@@ -3,16 +3,17 @@
     <div class="left">
       <p class="kicker">{{ 'CONTACT.KICKER' | translate }}</p>
       <h2 id="contact-title" class="headline">
-        <span>{{ 'CONTACT.TITLE' | translate }}<br />{{ 'CONTACT.TITLESEC' | translate }}</span>
+        <span>{{ 'CONTACT.TITLE' | translate }}<br />{{ 'CONTACT.TITLE_SEC' | translate }}</span>
       </h2>
 
       <h3 class="subhead">{{ 'CONTACT.SUBTITLE' | translate }}</h3>
       <p class="lead">
         {{ 'CONTACT.INTRO' | translate }}
       </p>
-      <span class="tail">{{ 'CONTACT.PITCH' | translate }}</span
-      >&nbsp;
-      <span class="tail-second">{{ 'CONTACT.PITCH_HIGHLIGHT' | translate }}</span>
+      <div class="pitch">
+        <span class="tail">{{ 'CONTACT.PITCH' | translate }}</span>
+        <span class="tail-second">{{ 'CONTACT.PITCH_HIGHLIGHT' | translate }}</span>
+      </div>
     </div>
 
     <form (ngSubmit)="onSubmit(contactForm)" class="right" #contactForm="ngForm">
