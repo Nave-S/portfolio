@@ -1,14 +1,25 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LanguageService } from '../../services/language.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss',
 })
 export class SkillsComponent {
+  constructor(private lang: LanguageService) {}
+  setLang(lang: 'en' | 'de') {
+    this.lang.use(lang);
+  }
+
+  get current() {
+    return this.lang.current();
+  }
+
   skills = [
     { label: 'HTML', icon: 'html.png' },
     { label: 'CSS', icon: 'css.png' },

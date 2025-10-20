@@ -1,25 +1,22 @@
 <section id="contact" class="contact" aria-labelledby="contact-title">
   <div class="wrap">
     <div class="left">
-      <p class="kicker">Contact me</p>
+      <p class="kicker">{{ 'CONTACT.KICKER' | translate }}</p>
       <h2 id="contact-title" class="headline">
-        <span
-          >Let's work <br />
-          together</span
-        >
+        <span>{{ 'CONTACT.TITLE' | translate }}<br />{{ 'CONTACT.TITLESEC' | translate }}</span>
       </h2>
 
-      <h3 class="subhead">Got a problem to solve?</h3>
+      <h3 class="subhead">{{ 'CONTACT.SUBTITLE' | translate }}</h3>
       <p class="lead">
-        Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through
-        your work.
+        {{ 'CONTACT.INTRO' | translate }}
       </p>
-      <span class="tail">Need a Frontend developer?</span>&nbsp;
-      <span class="tail-second">Let’s talk!</span>
+      <span class="tail">{{ 'CONTACT.PITCH' | translate }}</span
+      >&nbsp;
+      <span class="tail-second">{{ 'CONTACT.PITCH_HIGHLIGHT' | translate }}</span>
     </div>
 
     <form (ngSubmit)="onSubmit(contactForm)" class="right" #contactForm="ngForm">
-      <label for="name" class="question">What's your name?</label>
+      <label for="name" class="question">{{ 'CONTACT.FORM.NAME' | translate }}</label>
       <input
         #nameInput="ngModel"
         [(ngModel)]="contactData.name"
@@ -27,39 +24,39 @@
         id="name"
         type="text"
         name="name"
-        placeholder="Your name goes here"
+        placeholder="{{ 'CONTACT.FORM.NAME_PLACEHOLDER' | translate }}"
         required />
       @if (!nameInput.valid && (nameInput.touched || contactForm.submitted)) {
-      <div class="error">Please provide your name.</div>
+      <div class="error">{{ 'CONTACT.FORM.ERRORS.NAME' | translate }}</div>
       }
       <div class="field">
-        <label for="email" class="question">What's your email?</label>
+        <label for="email" class="question">{{ 'CONTACT.FORM.EMAIL' | translate }}</label>
         <input
           #emailInput="ngModel"
           [(ngModel)]="contactData.email"
           id="email"
           type="email"
           name="email"
-          placeholder="youremail@email.com"
+          placeholder="{{ 'CONTACT.FORM.EMAIL_PLACEHOLDER' | translate }}"
           required
           pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" />
         @if (!emailInput.valid && (emailInput.touched || contactForm.submitted)) {
-        <div class="error">Please provide a valid email.</div>
+        <div class="error">{{ 'CONTACT.FORM.ERRORS.EMAIL' | translate }}</div>
         }
       </div>
 
       <div class="field">
-        <label for="message" class="question">How can I help you?</label>
+        <label for="message" class="question">{{ 'CONTACT.FORM.MESSAGE' | translate }}</label>
         <textarea
           #messageInput="ngModel"
           [(ngModel)]="contactData.message"
           minlength="4"
           id="message"
           name="message"
-          placeholder="Hello Nawied, I am interested in…"
+          placeholder="{{ 'CONTACT.FORM.MESSAGE_PLACEHOLDER' | translate }}"
           required></textarea>
         @if (!messageInput.valid && (messageInput.touched || contactForm.submitted)) {
-        <div class="error">Please add a short message.</div>
+        <div class="error">{{ 'CONTACT.FORM.ERRORS.MESSAGE' | translate }}</div>
         }
         <div class="field-last"></div>
       </div>
@@ -69,15 +66,16 @@
         <span class="box" aria-hidden="true"></span>
         <div class="consent-text-group">
           <span class="consent-text">
-            I've read the <a class="consent-link" href="#">privacy policy</a> and agree to the processing of my data as outlined.
+            {{ 'CONTACT.FORM.PRIVACY_A' | translate }}<a class="consent-link" href="#">{{ 'CONTACT.FORM.PRIVACY_B' | translate }}</a
+            >{{ 'CONTACT.FORM.PRIVACY_C' | translate }}
           </span>
         </div>
       </label>
       @if (!privacyInput.valid && (privacyInput.touched || contactForm.submitted)){
-      <div class="error">Please accept the privacy policy.</div>
+      <div class="error">{{ 'CONTACT.FORM.ERRORS.PRIVACY' | translate }}</div>
       }
       <div class="btn-position">
-        <button class="btn" type="submit">Say Hello ;)</button>
+        <button class="btn" type="submit">{{ 'CONTACT.FORM.SUBMIT' | translate }}</button>
       </div>
     </form>
   </div>

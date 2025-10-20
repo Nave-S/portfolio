@@ -1,20 +1,22 @@
 import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LanguageService } from '../../../services/language.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 interface ProjectData {
   number: string;
-  title: string;
-  infoTitle: string;
-  description: string;
-  tech: { name: string; icon: string; alt: string }[];
-  buttons: { label: string; icon: string; link: string }[];
+  titleKey: string;
+  infoTitleKey: string;
+  descriptionKey: string;
+  tech: { nameKey: string; icon: string; altKey?: string }[];
+  buttons: { labelKey: string; icon: string; link: string }[];
   previewImage: string;
 }
 
 @Component({
   selector: 'app-project-overlay',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './project-overlay.component.html',
   styleUrl: './project-overlay.component.scss',
 })
@@ -24,6 +26,15 @@ export class ProjectOverlayComponent {
   @Output() closed = new EventEmitter<void>();
   @Output() projectChange = new EventEmitter<string>();
   open = true;
+
+  constructor(private lang: LanguageService) {}
+  setLang(lang: 'en' | 'de') {
+    this.lang.use(lang);
+  }
+
+  get current() {
+    return this.lang.current();
+  }
 
   private projectOrder = ['join', 'elpolloloco'];
 
@@ -52,19 +63,42 @@ export class ProjectOverlayComponent {
       case 'join':
         return {
           number: '01',
-          title: 'Join',
-          infoTitle: 'What is this project about',
-          description:
-            'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+          titleKey: 'PROJECTS.OVERLAY.JOIN.TITLE',
+          infoTitleKey: 'PROJECTS.OVERLAY.INFO_TITLE',
+          descriptionKey: 'PROJECTS.OVERLAY.JOIN.DESCRIPTION',
           tech: [
-            { name: 'HTML', icon: 'assets/icons/html_green.png', alt: 'HTML' },
-            { name: 'CSS', icon: 'assets/icons/css_green.png', alt: 'CSS' },
-            { name: 'JavaScript', icon: 'assets/icons/javascript_green.png', alt: 'JavaScript' },
-            { name: 'Firebase', icon: 'assets/icons/firebase_green.png', alt: 'Firebase' },
+            {
+              nameKey: 'PROJECTS.OVERLAY.JOIN.TECH.HTML',
+              icon: 'assets/icons/html_green.png',
+              altKey: 'PROJECTS.OVERLAY.JOIN.TECH.HTML',
+            },
+            {
+              nameKey: 'PROJECTS.OVERLAY.JOIN.TECH.CSS',
+              icon: 'assets/icons/css_green.png',
+              altKey: 'PROJECTS.OVERLAY.JOIN.TECH.CSS',
+            },
+            {
+              nameKey: 'PROJECTS.OVERLAY.JOIN.TECH.JAVASCRIPT',
+              icon: 'assets/icons/javascript_green.png',
+              altKey: 'PROJECTS.OVERLAY.JOIN.TECH.JAVASCRIPT',
+            },
+            {
+              nameKey: 'PROJECTS.OVERLAY.JOIN.TECH.FIREBASE',
+              icon: 'assets/icons/firebase_green.png',
+              altKey: 'PROJECTS.OVERLAY.JOIN.TECH.FIREBASE',
+            },
           ],
           buttons: [
-            { label: 'GitHub', icon: 'assets/icons/arrow_green.png', link: 'https://github.com/your-repo' },
-            { label: 'Live Test', icon: 'assets/icons/arrow_green.png', link: 'https://your-live-site' },
+            {
+              labelKey: 'PROJECTS.BUTTONS.GITHUB',
+              icon: 'assets/icons/arrow_green.png',
+              link: 'https://github.com/Nave-S/Join',
+            },
+            {
+              labelKey: 'PROJECTS.BUTTONS.LIVE',
+              icon: 'assets/icons/arrow_green.png',
+              link: 'https://your-live-site',
+            },
           ],
           previewImage: 'assets/images/join_placeholder.png',
         };
@@ -72,18 +106,37 @@ export class ProjectOverlayComponent {
       case 'elpolloloco':
         return {
           number: '02',
-          title: 'El Pollo Loco',
-          infoTitle: 'What is this project about',
-          description:
-            'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
+          titleKey: 'PROJECTS.OVERLAY.ELPOLLOLOCO.TITLE',
+          infoTitleKey: 'PROJECTS.OVERLAY.INFO_TITLE',
+          descriptionKey: 'PROJECTS.OVERLAY.ELPOLLOLOCO.DESCRIPTION',
           tech: [
-            { name: 'HTML', icon: 'assets/icons/html_green.png', alt: 'HTML' },
-            { name: 'CSS', icon: 'assets/icons/css_green.png', alt: 'CSS' },
-            { name: 'JavaScript', icon: 'assets/icons/javascript_green.png', alt: 'JavaScript' },
+            {
+              nameKey: 'PROJECTS.OVERLAY.ELPOLLOLOCO.TECH.HTML',
+              icon: 'assets/icons/html_green.png',
+              altKey: 'PROJECTS.OVERLAY.ELPOLLOLOCO.TECH.HTML',
+            },
+            {
+              nameKey: 'PROJECTS.OVERLAY.ELPOLLOLOCO.TECH.CSS',
+              icon: 'assets/icons/css_green.png',
+              altKey: 'PROJECTS.OVERLAY.ELPOLLOLOCO.TECH.CSS',
+            },
+            {
+              nameKey: 'PROJECTS.OVERLAY.ELPOLLOLOCO.TECH.JAVASCRIPT',
+              icon: 'assets/icons/javascript_green.png',
+              altKey: 'PROJECTS.OVERLAY.ELPOLLOLOCO.TECH.JAVASCRIPT',
+            },
           ],
           buttons: [
-            { label: 'GitHub', icon: 'assets/icons/arrow_green.png', link: 'https://github.com/your-repo' },
-            { label: 'Live Test', icon: 'assets/icons/arrow_green.png', link: 'https://your-live-site' },
+            {
+              labelKey: 'PROJECTS.BUTTONS.GITHUB',
+              icon: 'assets/icons/arrow_green.png',
+              link: 'https://github.com/Nave-S/El-Pollo-Loco',
+            },
+            {
+              labelKey: 'PROJECTS.OVERLAY.ELPOLLOLOCO.BUTTONS.LIVE',
+              icon: 'assets/icons/arrow_green.png',
+              link: 'https://your-live-site',
+            },
           ],
           previewImage: 'assets/images/el_pollo_loco_placeholder.png',
         };
@@ -96,9 +149,9 @@ export class ProjectOverlayComponent {
   private getDefaultProject(): ProjectData {
     return {
       number: '00',
-      title: 'Project Not Found',
-      infoTitle: 'Error',
-      description: 'Project details not available',
+      titleKey: 'PROJECTS.OVERLAY.DEFAULT.TITLE',
+      infoTitleKey: 'PROJECTS.OVERLAY.DEFAULT.INFO_TITLE',
+      descriptionKey: 'PROJECTS.OVERLAY.DEFAULT.DESCRIPTION',
       tech: [],
       buttons: [],
       previewImage: 'assets/images/placeholder.png',

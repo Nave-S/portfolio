@@ -16,5 +16,122 @@
       "BASED": "Based near Unna",
       "OPEN": "Open to work"
     }
+  },
+  "ABOUT": {
+    "KICKER": "Who I Am",
+    "TITLE": "About Me",
+    "INTRO": "Hey, I’m Nawied! After more than 15 years in the German Armed Forces, I discovered my passion for programming especially in frontend development. I love turning creative ideas into visible code while working in a structured, solution-oriented way and within a team. What motivates me is the constant change in IT: new technologies, tools, and frameworks inspire me every day to learn more and improve. I see problems as opportunities to find the best solution through analytical thinking, perseverance, and creativity.",
+    "LOCATION": {
+      "TEXT": "I live near Unna and am open to remote work as well as potential relocations."
+    },
+    "MINDSET": {
+      "TEXT": "I am open-minded and passionate about learning new technologies and continuously improving my skills."
+    },
+    "APPROACH": {
+      "TEXT": "I solve problems analytically and creatively, always aiming for the most efficient and elegant solution."
+    }
+  },
+
+  "SKILLS": {
+    "KICKER": "Technologies",
+    "TITLE": "Skills",
+    "INTRO": " A short introduction of your skills. Highlight your experience of using different front-end technologies and emphasise your openness to learning and adapting to new technologies. Show how important it is for you to keep up with the rapid changes in webdevelopment.",
+    "PITCH": "Need",
+    "PITCH_HIGHLIGHT": "other skills?",
+    "PITCH_TEXT": "Feel free to reach out. I look forward to expanding my knowledge.",
+    "CTA": "Let's talk",
+    "INTEREST": "I have a special interest in learning"
+  },
+
+  "PROJECTS": {
+    "KICKER": "Portfolio",
+    "TITLE": "Selected Projects",
+    "INTRO": "Explore a selection of my work - interact with the projects to see my skills in action.",
+    "NEXT": "Next Project",
+    "BUTTONS": {
+      "GITHUB": "GitHub",
+      "LIVE": "Live Demo"
+    },
+    "OVERLAY": {
+      "INFO_TITLE": "What is this project about",
+      "DEFAULT": {
+        "TITLE": "Project Not Found",
+        "DESCRIPTION": "Project details not available",
+        "INFO_TITLE": "Error"
+      },
+      "JOIN": {
+        "TITLE": "Join",
+        "DESCRIPTION": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+        "TECH": {
+          "HTML": "HTML",
+          "CSS": "CSS",
+          "JAVASCRIPT": "JavaScript",
+          "FIREBASE": "Firebase"
+        },
+        "BUTTONS": {
+          "LIVE": "Live Demo"
+        }
+      },
+      "ELPOLLOLOCO": {
+        "TITLE": "El Pollo Loco",
+        "DESCRIPTION": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
+        "TECH": {
+          "HTML": "HTML",
+          "CSS": "CSS",
+          "JAVASCRIPT": "JavaScript"
+        },
+        "BUTTONS": {
+          "LIVE": "Live Demo"
+        }
+      }
+    }
+  },
+
+  "TESTIMONIALS": {
+    "KICKER": "Feedback",
+    "TITLE": "What Clients Say",
+    "INTRO": "Hear from those I've worked with about their experiences collaborating with me.",
+    "BUTTONS": {
+      "PREV": "Previous Testimonial",
+      "NEXT": "Next Testimonial"
+    }
+  },
+
+  "CONTACT": {
+    "KICKER": "Contact",
+    "TITLE": "Let’s Work Together",
+    "SUBTITLE": "Got a problem to solve?",
+    "INTRO": "I’m looking forward to supporting your projects with my work.",
+    "PITCH": "Need a frontend developer?",
+    "PITCH_HIGHLIGHT": "Let’s talk!",
+    "FORM": {
+      "NAME": "What’s your name?",
+      "NAME_PLACEHOLDER": "Your name",
+      "EMAIL": "What’s your email?",
+      "EMAIL_PLACEHOLDER": "youremail@email.com",
+      "MESSAGE": "How can I help you?",
+      "MESSAGE_PLACEHOLDER": "Hi Nawied, I’m interested in...",
+      "PRIVACY_A": "I have read the",
+      "PRIVACY_B": " privacy policy ",
+      "PRIVACY_C": "and agree to the processing of my data as described.",
+      "SUBMIT": "Say Hello ;)",
+      "ERRORS": {
+        "NAME": "Please enter your name.",
+        "EMAIL": "Please enter a valid email address.",
+        "MESSAGE": "Please add a short message.",
+        "PRIVACY": "Please accept the privacy policy."
+      }
+    }
+  },
+
+  "FOOTER": {
+    "COUNTRY": "Germany",
+    "ROLE": "Frontend Developer",
+    "TEXT": "&copy; 2024 Nawied Al-Ali. All rights reserved.",
+    "LEGAL": "Imprint"
+  },
+
+  "IMPRINT": {
+    "HEADER": "Imprint"
   }
 }

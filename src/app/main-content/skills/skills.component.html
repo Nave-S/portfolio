@@ -1,19 +1,22 @@
 <section id="skills" class="skills-section" aria-labelledby="skills-title">
   <div class="content">
     <div class="card-title">
-      <p class="kicker">Technologies</p>
+      <p class="kicker">{{ 'SKILLS.KICKER' | translate }}</p>
       <article class="card" role="article">
-        <h2 id="skills-title" class="title">Skill Set</h2>
+        <h2 id="skills-title" class="title">{{ 'SKILLS.TITLE' | translate }}</h2>
         <p class="intro">
-          A short introduction of your skills. Highlight your experience of using different front-end technologies and emphasise your
-          openness to learning and adapting to new technologies. Show how important it is for you to keep up with the rapid changes in web
-          development.
+          {{ 'SKILLS.INTRO' | translate }}
         </p>
 
-        <h3 class="pitch"><span class="strong"></span><span>You need</span>&nbsp;<span class="pitch-second-half">another skill?</span></h3>
-        <p class="pitch-p">Feel free to contact me. I look forward to expanding on my previous knowledge.</p>
+        <h3 class="pitch">
+          <span class="strong"></span><span>{{ 'SKILLS.PITCH' | translate }}</span
+          >&nbsp;<span class="pitch-second-half">{{ 'SKILLS.PITCH_HIGHLIGHT' | translate }}</span>
+        </h3>
+        <p class="pitch-p">{{ 'SKILLS.PITCH_TEXT' | translate }}</p>
 
-        <a href="#contact" class="btn"><span>Let's Talk</span></a>
+        <a href="#contact" class="btn"
+          ><span>{{ 'SKILLS.CTA' | translate }}</span></a
+        >
       </article>
     </div>
     <div class="skills" role="list">
@@ -29,7 +32,7 @@
         <span class="label">Growth mindset</span>
 
         <div class="tip" role="tooltip" id="tip-growth">
-          <span>I have a special interest in learning</span>
+          <span>{{ 'SKILLS.INTEREST' | translate }}</span>
           <div class="img-position">
             <img class="icon" src="../../../assets/icons/react.png" alt="" />
             <img class="icon" src="../../../assets/icons/vue.png" alt="" />
