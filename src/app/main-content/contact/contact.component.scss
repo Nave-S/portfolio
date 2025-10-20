@@ -4,6 +4,7 @@
   --muted: #a7b1bb;
   --accent: #2fe0c5;
   --rule: rgba(47, 224, 197, 0.35);
+  --ring: rgba(47, 224, 197, 0.35);
 }
 
 .contact {
@@ -226,5 +227,22 @@ textarea:hover::placeholder {
   transform: translateY(-2px);
   border-color: var(--accent);
   box-shadow: 0 10px 24px rgba(47, 224, 197, 0.35);
+}
+
+.message {
+  position: fixed;
+  bottom: 50%;
+  // right: 20px;
+  background-color: var(--bg);
+  // background-color: var(--accent);
+  color: var(--fc);
+  padding: 16px;
+  border-radius: 35px;
+  // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.75rem var(--ring);
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
 }
 

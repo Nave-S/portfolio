@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { LanguageService } from '../../services/language.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -11,6 +12,8 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
+  http = inject(HttpClient);
+
   contactData = {
     name: '',
     email: '',
@@ -18,10 +21,48 @@ export class ContactComponent {
     privacy: false,
   };
 
+  mailTest = true;
+
+  messageStatus = {
+    show: false,
+    text: '',
+  };
+
+  post = {
+    endPoint: 'https://deineDomain.de/sendMail.php',
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'text/plain',
+        responseType: 'text',
+      },
+    },
+  };
+
   onSubmit(ngForm: NgForm) {
-    if (ngForm.valid && ngForm.submitted) {
-      console.log('Form submitted', this.contactData);
+    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+      this.http.post(this.post.endPoint, this.post.body(this.contactData)).subscribe({
+        next: (response) => {
+          ngForm.resetForm();
+          this.showSuccessMessage();
+        },
+        error: (error) => {
+          console.error(error);
+        },
+        complete: () => console.info('send post complete'),
+      });
+    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+      ngForm.resetForm();
+      this.showSuccessMessage();
     }
+  }
+
+  private showSuccessMessage() {
+    this.messageStatus.show = true;
+    this.messageStatus.text = 'Nachricht erfolgreich gesendet!';
+    setTimeout(() => {
+      this.messageStatus.show = false;
+    }, 3000);
   }
 
   constructor(private lang: LanguageService) {}

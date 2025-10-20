@@ -79,5 +79,10 @@
       </div>
     </form>
   </div>
+  @if (messageStatus.show) {
+  <div class="message">
+    {{ messageStatus.text }}
+  </div>
+  }
 </section>
 
