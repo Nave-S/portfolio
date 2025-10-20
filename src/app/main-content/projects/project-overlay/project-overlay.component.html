@@ -9,21 +9,17 @@
 
       <div class="tech">
         @for (tech of activeProject.tech; track tech.nameKey) {
-          <img
-            class="tech-icon"
-            [src]="tech.icon"
-            [attr.alt]="tech.altKey ? (tech.altKey | translate) : null"
-          />
-          <span>{{ tech.nameKey | translate }}</span>
+        <img class="tech-icon" [src]="tech.icon" [attr.alt]="tech.altKey ? (tech.altKey | translate) : null" />
+        <span>{{ tech.nameKey | translate }}</span>
         }
       </div>
 
       <div class="btn-position">
         @for (button of activeProject.buttons; track button.labelKey) {
-          <a [href]="button.link" target="_blank" rel="noopener" class="btn">
-            <span>{{ button.labelKey | translate }}</span>
-            <img class="arrow-icon" [src]="button.icon" alt="" />
-          </a>
+        <a [href]="button.link" target="_blank" class="btn">
+          <span>{{ button.labelKey | translate }}</span>
+          <img class="arrow-icon" [src]="button.icon" alt="" />
+        </a>
         }
       </div>
     </div>
@@ -39,3 +35,4 @@
     </div>
   </div>
 </div>
+
