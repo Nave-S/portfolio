@@ -19,9 +19,7 @@
 
 .hero {
   position: relative;
-  height: auto;
   height: 100vh;
-  max-height: 900px;
   width: 100%;
   color: var(--fc);
   background: radial-gradient(1200px 600px at 85% 0%, rgba(17, 110, 102, 0.25), transparent 60%),
@@ -45,7 +43,7 @@
   position: relative;
   z-index: 2;
   padding: 8px;
-  padding-top: 218px;
+  padding-top: 500px;
   max-width: 1100px;
   margin: 0 auto;
 
@@ -235,7 +233,6 @@
   flex-direction: column;
   gap: 16px;
   margin-left: 96px;
-  cursor: pointer;
 
   .circle {
     width: 30px;
@@ -286,7 +283,7 @@
   align-items: center;
   position: absolute;
   width: 120%;
-  height: 64px;
+  height: 62px;
   transform: rotate(-3deg);
   left: -4px;
   bottom: clamp(2rem, 3.2vw, 5.5rem);
@@ -311,7 +308,7 @@
     span {
       margin-right: 3rem;
       font-family: 'Karla', sans-serif;
-      font-size: 32px;
+      font-size: clamp(24px, calc(12.916px + 0.964vw), 32px);
       font-weight: 400;
     }
   }
@@ -410,9 +407,12 @@
 /* --------------Screenreader Test-------------- */
 
 @media (max-width: 768px) {
-  .center {
-    padding-top: 128px;
+  .ticker {
+    height: 53px;
   }
+  // .center {
+  //   padding-top: 50%;
+  // }
   .center .kicker {
     letter-spacing: 0.01em;
   }
