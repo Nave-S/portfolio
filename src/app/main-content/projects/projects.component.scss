@@ -19,8 +19,8 @@
 }
 
 .overall-container {
-  padding-left: 96px;
-  padding-right: 96px;
+  padding-left: clamp(16px, 0.5783px + 4.8193vw, 96px);
+  padding-right: clamp(16px, 0.5783px + 4.8193vw, 96px);
   width: 100%;
   max-width: 1980px;
   display: flex;
@@ -146,31 +146,20 @@
   background-color: #3dcfb6;
 }
 
-@media (max-width: 1280px) {
-  .overall-container {
-    padding-left: 72px;
-    padding-right: 72px;
-  }
-}
-
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .projects {
     padding-top: 120px;
-    padding-bottom: 120px;
+    padding-bottom: 0px;
   }
 
   .overall-container {
     flex-direction: column;
     align-items: center;
     gap: 64px;
-    padding-left: 56px;
-    padding-right: 56px;
   }
 
   .projects-preview {
-    margin-top: 0;
-    height: auto;
-    max-width: 620px;
+    display: none;
   }
 
   .list {
@@ -182,16 +171,42 @@
   }
 }
 
+// @media (max-width: 1024px) {
+//   .projects {
+//     padding-top: 120px;
+//     padding-bottom: 120px;
+//   }
+
+//   .overall-container {
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 64px;
+//     padding-left: 56px;
+//     padding-right: 56px;
+//   }
+
+//   .projects-preview {
+//     margin-top: 0;
+//     height: auto;
+//     max-width: 620px;
+//   }
+
+//   .list {
+//     width: 100%;
+//   }
+
+//   .item {
+//     gap: 16px;
+//   }
+// }
+
 @media (max-width: 768px) {
   .projects {
     padding-top: 104px;
-    padding-bottom: 104px;
   }
 
   .overall-container {
     gap: 48px;
-    padding-left: 32px;
-    padding-right: 32px;
   }
 
   .intro {
@@ -219,12 +234,10 @@
 @media (max-width: 520px) {
   .projects {
     padding-top: 88px;
-    padding-bottom: 88px;
   }
 
   .overall-container {
-    padding-left: 24px;
-    padding-right: 24px;
+    gap: 32px;
   }
 
   .kicker {
@@ -250,12 +263,10 @@
 @media (max-width: 360px) {
   .projects {
     padding-top: 72px;
-    padding-bottom: 72px;
   }
 
   .overall-container {
-    padding-left: 20px;
-    padding-right: 20px;
+    gap: 24px;
   }
 
   .item {
@@ -263,3 +274,4 @@
     padding-right: 10px;
   }
 }
+

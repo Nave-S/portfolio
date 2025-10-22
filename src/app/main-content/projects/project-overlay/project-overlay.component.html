@@ -22,6 +22,10 @@
         </a>
         }
       </div>
+      <button type="button" class="panel-next-responsive" aria-label="Next" (click)="nextProject()">
+        <span>{{ 'PROJECTS.NEXT' | translate }}</span
+        ><img src="./assets/icons/next_arrow.png" alt="" />
+      </button>
     </div>
     <div class="panel-right">
       <button type="button" class="panel-close" (click)="close()" aria-label="Close">

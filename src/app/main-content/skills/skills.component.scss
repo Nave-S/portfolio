@@ -24,8 +24,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 96px;
-  padding-right: 96px;
+  padding-left: clamp(16px, 0.5783px + 4.8193vw, 96px);
+  padding-right: clamp(16px, 0.5783px + 4.8193vw, 96px);
   gap: 48px;
 }
 
@@ -146,13 +146,12 @@
     color: white;
   }
 }
-
 .skills {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 48px 32px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(80px, 104px));
+  grid-gap: 48px 32px;
+  justify-content: center;
+  place-items: center;
   max-width: 516px;
   width: 100%;
 }
@@ -264,31 +263,16 @@
   height: 50px;
 }
 
-@media (max-width: 1280px) {
-  .content {
-    padding-left: 72px;
-    padding-right: 72px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .skills-section {
-    padding-top: 120px;
-    padding-bottom: 120px;
-  }
-
+@media (max-width: 1200px) {
   .content {
     flex-direction: column;
     align-items: center;
     gap: 64px;
-    padding-left: 56px;
-    padding-right: 56px;
   }
-
-  .skills {
-    justify-content: center;
+  .skills-section {
+    padding-top: 120px;
+    padding-bottom: 120px;
   }
-
   .card {
     max-width: 620px;
   }
@@ -301,8 +285,6 @@
   }
 
   .content {
-    padding-left: 32px;
-    padding-right: 32px;
     gap: 48px;
   }
 
@@ -324,15 +306,27 @@
   }
 }
 
+@media (max-width: 552px) {
+  .skill,
+  .skill-tooltip {
+    width: 56px;
+    height: auto;
+  }
+
+  .skill {
+    img {
+      width: 48px;
+    }
+  }
+  .skills {
+    grid-template-columns: repeat(3, minmax(80px, 104px));
+  }
+}
+
 @media (max-width: 520px) {
   .skills-section {
     padding-top: 88px;
     padding-bottom: 88px;
-  }
-
-  .content {
-    padding-left: 24px;
-    padding-right: 24px;
   }
 
   .card {
@@ -340,13 +334,7 @@
   }
 
   .skills {
-    gap: 24px 20px;
-  }
-
-  .skill,
-  .skill-tooltip {
-    width: 90px;
-    height: auto;
+    gap: 24px 8px;
   }
 
   .label {
@@ -365,12 +353,8 @@
     padding-bottom: 72px;
   }
 
-  .content {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
   .btn {
     width: 100%;
   }
 }
+

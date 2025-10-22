@@ -21,8 +21,8 @@
 }
 
 .wrap {
-  padding-left: 96px;
-  padding-right: 96px;
+  padding-left: clamp(16px, 0.5783px + 4.8193vw, 96px);
+  padding-right: clamp(16px, 0.5783px + 4.8193vw, 96px);
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -207,6 +207,13 @@ textarea:hover::placeholder {
   transform: rotate(45deg);
 }
 
+.consent-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
 .consent-text-group:hover {
   .consent-link {
     color: var(--accent);
@@ -271,16 +278,9 @@ textarea:hover::placeholder {
   font-size: 18px;
 }
 
-@media (max-width: 1280px) {
-  .wrap {
-    padding-left: 72px;
-    padding-right: 72px;
-  }
-}
-
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .contact {
-    padding-top: 120px;
+    padding-top: 0px;
     padding-bottom: 120px;
   }
 
@@ -288,8 +288,6 @@ textarea:hover::placeholder {
     flex-direction: column;
     align-items: stretch;
     gap: 64px;
-    padding-left: 56px;
-    padding-right: 56px;
   }
 
   .left,
@@ -302,9 +300,37 @@ textarea:hover::placeholder {
   }
 }
 
+// @media (max-width: 1024px) {
+//   .contact {
+//     padding-top: 120px;
+//     padding-bottom: 120px;
+//   }
+
+//   .wrap {
+//     flex-direction: column;
+//     align-items: stretch;
+//     gap: 64px;
+//     padding-left: 56px;
+//     padding-right: 56px;
+//   }
+
+//   .left,
+//   .right {
+//     max-width: 100%;
+//   }
+
+//   .btn {
+//     align-self: center;
+//   }
+// }
+
 @media (max-width: 768px) {
+  // .box {
+  //   width: 48px;
+  // }
+
   .contact {
-    padding-top: 104px;
+    // padding-top: 104px;
     padding-bottom: 104px;
   }
 
@@ -344,7 +370,7 @@ textarea:hover::placeholder {
 
 @media (max-width: 520px) {
   .contact {
-    padding-top: 88px;
+    // padding-top: 88px;
     padding-bottom: 88px;
   }
 
@@ -365,9 +391,9 @@ textarea:hover::placeholder {
     min-height: 96px;
   }
 
-  .consent {
-    align-items: flex-start;
-  }
+  // .consent {
+  //   align-items: flex-start;
+  // }
 
   .btn {
     font-size: 17px;
@@ -377,7 +403,7 @@ textarea:hover::placeholder {
 
 @media (max-width: 360px) {
   .contact {
-    padding-top: 72px;
+    // padding-top: 72px;
     padding-bottom: 72px;
   }
 
@@ -391,3 +417,4 @@ textarea:hover::placeholder {
     width: 100%;
   }
 }
+
