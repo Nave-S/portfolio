@@ -410,12 +410,36 @@
 /* --------------Screenreader Test-------------- */
 
 @media (max-width: 768px) {
+  .center {
+    padding-top: 128px;
+  }
+  .center .kicker {
+    letter-spacing: 0.01em;
+  }
+  .btn {
+    font-size: 16px;
+  }
+
+  .spacer-left {
+    height: 224px;
+  }
+  .spacer-right {
+    height: 112px;
+  }
+
   .v-email {
     display: none;
   }
   .v-email-icon {
     display: flex;
+    width: 40px;
+    height: 40px;
   }
+  .social .icon {
+    width: 40px;
+    height: 40px;
+  }
+
   .scroll {
     margin-left: 24px;
   }

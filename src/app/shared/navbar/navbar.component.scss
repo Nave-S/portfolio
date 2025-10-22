@@ -130,7 +130,7 @@
     display: flex;
   }
 }
-@media (max-width: 880px) {
+@media (max-width: 930px) {
   .top-bar {
     padding-left: 16px;
     padding-right: 16px;
@@ -150,6 +150,9 @@
   background: none;
   border: none;
   padding: 10px;
+  &:hover .burger-bar {
+    background-color: var(--accent);
+  }
 
   .burger-bar {
     width: 32px;
@@ -184,7 +187,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 80px;
+    top: 96px;
     right: -100%;
     width: 240px;
     height: 256px;
@@ -201,6 +204,8 @@
 
     &.open {
       right: 16px;
+      left: 16px;
+      margin: auto;
     }
 
     .nav {

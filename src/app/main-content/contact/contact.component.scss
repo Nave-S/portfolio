@@ -10,6 +10,7 @@
 .contact {
   // background: radial-gradient(1100px 600px at 0% 0%, rgba(47, 224, 197, 0.08), transparent 60%), var(--bg);
   background-color: var(--bg);
+  padding-top: 144px;
   padding-bottom: 144px;
   font-family: 'FiraCode', monospace;
   color: var(--fc);
@@ -24,7 +25,6 @@
   padding-right: 96px;
   display: flex;
   justify-content: space-between;
-
   width: 100%;
   max-width: 1980px;
   gap: 48px;
@@ -33,7 +33,7 @@
 .left {
   display: flex;
   flex-direction: column;
-  min-width: 568px;
+  max-width: 568px;
 }
 
 .kicker {
@@ -51,7 +51,7 @@
   font-weight: 900;
   letter-spacing: 1px;
   line-height: 1.05;
-  font-size: 64px;
+  font-size: clamp(2.5rem, 6vw, 4rem);
 }
 
 .subhead {
@@ -271,3 +271,123 @@ textarea:hover::placeholder {
   font-size: 18px;
 }
 
+@media (max-width: 1280px) {
+  .wrap {
+    padding-left: 72px;
+    padding-right: 72px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  .wrap {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 64px;
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+
+  .left,
+  .right {
+    max-width: 100%;
+  }
+
+  .btn {
+    align-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding-top: 104px;
+    padding-bottom: 104px;
+  }
+
+  .wrap {
+    gap: 48px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .btn-position {
+    width: 100%;
+  }
+
+  .kicker {
+    font-size: 20px;
+  }
+
+  .lead {
+    font-size: 17px;
+  }
+
+  .field {
+    padding-left: 0;
+  }
+
+  .pitch {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .btn {
+    align-self: stretch;
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .contact {
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
+
+  .wrap {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .lead {
+    font-size: 16px;
+  }
+
+  .question {
+    font-size: 20px;
+  }
+
+  textarea {
+    min-height: 96px;
+  }
+
+  .consent {
+    align-items: flex-start;
+  }
+
+  .btn {
+    font-size: 17px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .contact {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .btn {
+    height: 48px;
+    width: 100%;
+  }
+}
