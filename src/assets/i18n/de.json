@@ -35,7 +35,7 @@
 
   "SKILLS": {
     "KICKER": "Technologien",
-    "TITLE": "Fähigkeiten",
+    "TITLE": "Skills",
     "INTRO": "Eine kurze Vorstellung deiner Fähigkeiten. Hebe deine Erfahrung im Umgang mit verschiedenen Frontend-Technologien hervor und betone deine Offenheit, neue Technologien zu erlernen und dich ihnen anzupassen. Zeige, wie wichtig es dir ist, mit den schnellen Entwicklungen in der Webentwicklung Schritt zu halten.",
     "PITCH": "Sie brauchen",
     "PITCH_HIGHLIGHT": "andere Fähigkeiten?",
@@ -95,7 +95,7 @@
   "CONTACT": {
     "KICKER": "Kontaktiere mich",
     "TITLE": "Lass uns",
-    "TITLE_SEC": " zusammenarbeiten",
+    "TITLE_SEC": " gemeinsam arbeiten",
     "SUBTITLE": "Ein Problem zu lösen?",
     "INTRO": "Ich freue mich darauf, Ihre Projekte durch meine Arbeit zu unterstützen.",
     "PITCH": "Brauchen Sie einen Frontend-Entwickler?",

@@ -27,8 +27,7 @@
   width: 100%;
   max-width: 1250px;
   border-radius: 35px;
-  background: radial-gradient(120% 140% at 30% 10%, rgba(47, 224, 197, 0.12), rgba(47, 224, 197, 0.04) 40%, rgba(0, 0, 0, 0) 70%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+  background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 0 0.5px rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(6px) saturate(1.05);
 }
@@ -173,7 +172,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // padding: 24px;
   padding: 0.1rem 1rem;
   border-radius: 100px;
   text-decoration: none;
@@ -220,21 +218,25 @@
   height: 17px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1320px) {
   .panel-next-responsive {
     display: none;
   }
 }
 
-@media (max-width: 1200px) {
-  .overlay-content {
-    margin: 0 32px;
-  }
-
+@media (max-width: 1320px) {
   .overlay-content {
     flex-direction: column-reverse;
     overflow-y: auto;
     max-height: calc(100vh - 48px);
+    margin: 0 32px;
+  }
+
+  .preview-img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 650px;
+    height: 100%;
   }
   .panel-next {
     display: none;
@@ -307,56 +309,9 @@
   }
 
   .btn-position {
-    justify-content: center;
     gap: 8px;
   }
 }
-
-// @media (max-width: 960px) {
-//   .tech {
-//     span {
-//       margin-right: 0px;
-//     }
-//   }
-
-//   .panel-left,
-//   .panel-right {
-//     width: 100%;
-//     padding: 48px 40px;
-//   }
-
-//   .panel-right {
-//     text-align: center;
-//   }
-
-//   .project-number {
-//     font-size: 96px;
-//   }
-
-//   .project-title {
-//     font-size: 48px;
-//     text-align: start;
-//   }
-
-//   .project-info-title {
-//     margin-top: 32px;
-//     text-align: start;
-//   }
-
-//   .project-description {
-//     text-align: start;
-//   }
-
-//   .tech {
-//     justify-content: start;
-//     flex-wrap: wrap;
-//   }
-
-//   .btn-position {
-//     justify-content: center;
-//     gap: 8px;
-//   }
-// }
 
 @media (max-width: 600px) {
   .overlay-content {
@@ -393,13 +348,12 @@
     max-width: 100%;
     height: auto;
   }
+}
 
-  // .panel-next {
-  //   margin-top: 32px;
-  // }
-
+@media (max-width: 400px) {
   .btn {
-    width: 100%;
+    font-size: 16px;
+    padding: 0px;
   }
 }
 
@@ -419,10 +373,6 @@
 
   .project-title {
     font-size: 32px;
-  }
-
-  .btn {
-    font-size: 16px;
   }
 }
 

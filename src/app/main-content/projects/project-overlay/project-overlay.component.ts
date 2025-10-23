@@ -27,6 +27,10 @@ export class ProjectOverlayComponent {
   @Output() projectChange = new EventEmitter<string>();
   open = true;
 
+  private originalBodyStyle: string = '';
+  private touchStartX = 0;
+  private touchEndX = 0;
+
   constructor(private lang: LanguageService) {}
   setLang(lang: 'en' | 'de') {
     this.lang.use(lang);
@@ -158,10 +162,31 @@ export class ProjectOverlayComponent {
     };
   }
 
+  @HostListener('touchstart', ['$event'])
+  onTouchStart(event: TouchEvent) {
+    this.touchStartX = event.touches[0].clientX;
+  }
+
+  @HostListener('touchend', ['$event'])
+  onTouchEnd(event: TouchEvent) {
+    this.touchEndX = event.changedTouches[0].clientX;
+    this.handleSwipe();
+  }
+
+  private handleSwipe() {
+    const swipeThreshold = 100;
+    const swipeDistance = this.touchEndX - this.touchStartX;
+
+    if (swipeDistance < -swipeThreshold) {
+      this.nextProject();
+    }
+  }
+
   @HostListener('document:keydown.escape')
   onEsc() {
     if (this.open) {
       this.open = false;
+      this.enableScroll();
       this.closed.emit();
     }
   }
@@ -169,13 +194,32 @@ export class ProjectOverlayComponent {
   onBackdropClick() {
     if (this.closeOnBackdrop) {
       this.open = false;
+      this.enableScroll();
       this.closed.emit();
     }
   }
 
   close() {
     this.open = false;
+    this.enableScroll();
     this.closed.emit();
+  }
+
+  ngOnInit(): void {
+    this.disableScroll();
+  }
+
+  ngOnDestroy(): void {
+    this.enableScroll();
+  }
+
+  private disableScroll(): void {
+    this.originalBodyStyle = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+  }
+
+  private enableScroll(): void {
+    document.body.style.overflow = this.originalBodyStyle;
   }
 }
 

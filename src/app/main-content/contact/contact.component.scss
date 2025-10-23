@@ -65,7 +65,7 @@
 
 .lead {
   margin: 0 0 16px 0;
-  max-width: 640px;
+  // max-width: 640px;
   color: var(--fc);
   opacity: 0.9;
   line-height: 1.6;
@@ -180,7 +180,8 @@ textarea:hover::placeholder {
 }
 
 .box {
-  width: 18px;
+  width: 100%;
+  max-width: 18px;
   height: 18px;
   border-radius: 4px;
   border: 2px solid var(--accent);
@@ -279,6 +280,30 @@ textarea:hover::placeholder {
 }
 
 @media (max-width: 1200px) {
+  .kicker {
+    text-align: center;
+  }
+
+  .headline {
+    text-align: center;
+  }
+
+  .subhead {
+    text-align: center;
+  }
+
+  .lead {
+    text-align: center;
+  }
+
+  .pitch {
+    justify-content: center;
+  }
+
+  .tail {
+    text-align: center;
+  }
+
   .contact {
     padding-top: 0px;
     padding-bottom: 120px;
@@ -288,6 +313,8 @@ textarea:hover::placeholder {
     flex-direction: column;
     align-items: stretch;
     gap: 64px;
+    width: 100%;
+    max-width: 990px;
   }
 
   .left,
@@ -358,7 +385,7 @@ textarea:hover::placeholder {
 
   .pitch {
     flex-direction: column;
-    align-items: flex-start;
+    // align-items: flex-start;
     gap: 4px;
   }
 
