@@ -1,4 +1,4 @@
-<header class="top-bar">
+<header class="top-bar" (click)="onTopBarClick($event)">
   <div class="nav-container" [class.open]="isMenuOpen">
     <nav class="nav" role="tablist" aria-label="Navigation">
       <app-language-switch class="d-none-first"></app-language-switch>

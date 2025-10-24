@@ -1,41 +1,43 @@
 <div *ngIf="open" class="overlay-root">
   <div class="backdrop" (click)="onBackdropClick()" aria-hidden="true"></div>
   <div class="overlay-content">
-    <div class="panel-left" role="dialog" aria-modal="true">
-      <h1 class="project-number">{{ activeProject.number }}</h1>
-      <h2 class="project-title">{{ activeProject.titleKey | translate }}</h2>
-      <h3 class="project-info-title">{{ activeProject.infoTitleKey | translate }}</h3>
-      <span class="project-description">{{ activeProject.descriptionKey | translate }}</span>
+    <div class="overlay-content-secondary">
+      <div class="panel-left" role="dialog" aria-modal="true">
+        <h1 class="project-number">{{ activeProject.number }}</h1>
+        <h2 class="project-title">{{ activeProject.titleKey | translate }}</h2>
+        <h3 class="project-info-title">{{ activeProject.infoTitleKey | translate }}</h3>
+        <span class="project-description">{{ activeProject.descriptionKey | translate }}</span>
 
-      <div class="tech">
-        @for (tech of activeProject.tech; track tech.nameKey) {
-        <img class="tech-icon" [src]="tech.icon" [attr.alt]="tech.altKey ? (tech.altKey | translate) : null" />
-        <span>{{ tech.nameKey | translate }}</span>
-        }
-      </div>
+        <div class="tech">
+          @for (tech of activeProject.tech; track tech.nameKey) {
+          <img class="tech-icon" [src]="tech.icon" [attr.alt]="tech.altKey ? (tech.altKey | translate) : null" />
+          <span>{{ tech.nameKey | translate }}</span>
+          }
+        </div>
 
-      <div class="btn-position">
-        @for (button of activeProject.buttons; track button.labelKey) {
-        <a [href]="button.link" target="_blank" class="btn">
-          <span>{{ button.labelKey | translate }}</span>
-          <img class="arrow-icon" [src]="button.icon" alt="" />
-        </a>
-        }
+        <div class="btn-position">
+          @for (button of activeProject.buttons; track button.labelKey) {
+          <a [href]="button.link" target="_blank" class="btn">
+            <span>{{ button.labelKey | translate }}</span>
+            <img class="arrow-icon" [src]="button.icon" alt="" />
+          </a>
+          }
+        </div>
+        <button type="button" class="panel-next-responsive" aria-label="Next" (click)="nextProject()">
+          <span>{{ 'PROJECTS.NEXT' | translate }}</span
+          ><img src="./assets/icons/next_arrow.png" alt="" />
+        </button>
       </div>
-      <button type="button" class="panel-next-responsive" aria-label="Next" (click)="nextProject()">
-        <span>{{ 'PROJECTS.NEXT' | translate }}</span
-        ><img src="./assets/icons/next_arrow.png" alt="" />
-      </button>
-    </div>
-    <div class="panel-right">
-      <button type="button" class="panel-close" (click)="close()" aria-label="Close">
-        <img class="close-icon" src="./assets/icons/close_small.png" alt="" />
-      </button>
-      <img class="preview-img" src="{{ activeProject.previewImage }}" alt="" />
-      <button type="button" class="panel-next" aria-label="Next" (click)="nextProject()">
-        <span>{{ 'PROJECTS.NEXT' | translate }}</span
-        ><img src="./assets/icons/next_arrow.png" alt="" />
-      </button>
+      <div class="panel-right">
+        <button type="button" class="panel-close" (click)="close()" aria-label="Close">
+          <img class="close-icon" src="./assets/icons/close_small.png" alt="" />
+        </button>
+        <img class="preview-img" src="{{ activeProject.previewImage }}" alt="" />
+        <button type="button" class="panel-next" aria-label="Next" (click)="nextProject()">
+          <span>{{ 'PROJECTS.NEXT' | translate }}</span
+          ><img src="./assets/icons/next_arrow.png" alt="" />
+        </button>
+      </div>
     </div>
   </div>
 </div>

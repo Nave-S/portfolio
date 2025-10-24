@@ -31,5 +31,11 @@ export class NavbarComponent {
       this.closeMenu();
     }
   }
+
+  onTopBarClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    if (target.closest('.burger-menu-button')) return;
+    this.closeMenu();
+  }
 }
 
