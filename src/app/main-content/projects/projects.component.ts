@@ -14,9 +14,17 @@ export class ProjectsComponent {
   overlayOpen = false;
   activeProject: string | null = null;
   showPreview = true;
+  isTouchDevice = false;
+  touchActiveProject: string | null = null;
   projects = ['join', 'elpolloloco' /*, 'Da Bubble'*/];
 
-  constructor(private lang: LanguageService) {}
+  constructor(private lang: LanguageService) {
+    this.isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+    if (window.matchMedia('(min-width: 1100px) and (max-width: 1370px)').matches) {
+      this.activeProject = 'join';
+    }
+  }
   setLang(lang: 'en' | 'de') {
     this.lang.use(lang);
   }
@@ -44,7 +52,14 @@ export class ProjectsComponent {
 
   closeOverlay() {
     this.overlayOpen = false;
-    this.showPreview = false;
+    this.showPreview = true;
+    if (window.matchMedia('(min-width: 1100px) and (max-width: 1370px)').matches) {
+      this.activeProject = this.activeProject;
+    } else if (this.isTouchDevice && this.activeProject) {
+      this.touchActiveProject = null;
+    } else {
+      this.activeProject = null;
+    }
   }
 
   onProjectChange(projectName: string) {
@@ -63,6 +78,32 @@ export class ProjectsComponent {
     if (!this.overlayOpen) {
       this.showPreview = true;
       this.activeProject = null;
+    }
+  }
+
+  handleTouchStart(event: Event, projectName: string) {
+    if (this.isTouchDevice) {
+      event.preventDefault();
+      if (this.touchActiveProject === projectName) {
+        this.openOverlay(projectName);
+        this.touchActiveProject = null;
+      } else {
+        this.touchActiveProject = projectName;
+        this.showProjectPreview(projectName);
+      }
+    }
+  }
+
+  handleProjectClick(event: Event, projectName: string) {
+    if (!this.isTouchDevice) {
+      event.stopPropagation();
+      this.openOverlay(projectName);
+    }
+  }
+
+  handlePreviewClick() {
+    if (this.isTouchDevice && this.activeProject) {
+      this.openOverlay(this.activeProject);
     }
   }
 }

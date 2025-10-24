@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    <form (ngSubmit)="onSubmit(contactForm)" class="right" #contactForm="ngForm">
+    <form id="form" (ngSubmit)="onSubmit(contactForm)" class="right" #contactForm="ngForm">
       <div class="field">
         <label for="name" class="question">{{ 'CONTACT.FORM.NAME' | translate }}</label>
         <input
@@ -26,6 +26,7 @@
           id="name"
           type="text"
           name="name"
+          autocomplete="additional-name"
           placeholder="{{ 'CONTACT.FORM.NAME_PLACEHOLDER' | translate }}"
           required />
 
@@ -44,6 +45,7 @@
           id="email"
           type="email"
           name="email"
+          autocomplete="additional-email"
           placeholder="{{ 'CONTACT.FORM.EMAIL_PLACEHOLDER' | translate }}"
           required
           pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" />

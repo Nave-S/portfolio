@@ -389,10 +389,10 @@ textarea:hover::placeholder {
     gap: 4px;
   }
 
-  .btn {
-    align-self: stretch;
-    width: 100%;
-  }
+  // .btn {
+  //   align-self: stretch;
+  //   width: 100%;
+  // }
 }
 
 @media (max-width: 520px) {
@@ -422,10 +422,10 @@ textarea:hover::placeholder {
   //   align-items: flex-start;
   // }
 
-  .btn {
-    font-size: 17px;
-    width: 100%;
-  }
+  // .btn {
+  //   font-size: 17px;
+  //   width: 100%;
+  // }
 }
 
 @media (max-width: 360px) {
@@ -439,9 +439,9 @@ textarea:hover::placeholder {
     padding-right: 20px;
   }
 
-  .btn {
-    height: 48px;
-    width: 100%;
-  }
+  // .btn {
+  //   height: 48px;
+  //   width: 100%;
+  // }
 }
 

@@ -163,6 +163,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .portrait::before {
+    display: none;
+  }
+}
+
 // @media (max-width: 1180px) {
 //   .content {
 //     padding-left: 48px;

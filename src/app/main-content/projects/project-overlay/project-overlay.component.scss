@@ -28,6 +28,7 @@
   width: 100%;
   max-width: 1250px;
   border-radius: 35px;
+  border: solid 1px var(--accent);
   background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 0 0.5px rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(6px) saturate(1.05);

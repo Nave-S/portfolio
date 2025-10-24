@@ -9,9 +9,10 @@
         <li>
           <a
             class="item"
-            (click)="$event.stopPropagation(); openOverlay('join')"
+            (click)="handleProjectClick($event, 'join')"
             (mouseenter)="showProjectPreview('join')"
-            (mouseleave)="hideProjectPreview()">
+            (mouseleave)="hideProjectPreview()"
+            (touchstart)="handleTouchStart($event, 'join')">
             <span class="name">Join <img class="arrow-icon" src="./assets/icons/arrow_outward.png" alt="" /></span>
             <div class="tech-container">
               <span class="tech">HTML</span>
@@ -27,9 +28,10 @@
         <li>
           <a
             class="item"
-            (click)="$event.stopPropagation(); openOverlay('elpolloloco')"
+            (click)="handleProjectClick($event, 'elpolloloco')"
             (mouseenter)="showProjectPreview('elpolloloco')"
-            (mouseleave)="hideProjectPreview()">
+            (mouseleave)="hideProjectPreview()"
+            (touchstart)="handleTouchStart($event, 'elpolloloco')">
             <span class="name">El Pollo Loco <img class="arrow-icon" src="./assets/icons/arrow_outward.png" alt="" /></span>
             <div class="tech-container">
               <span class="tech">HTML</span>
@@ -54,8 +56,11 @@
         </li> -->
       </ul>
     </div>
-    <div class="projects-preview">
+    <div class="projects-preview" (click)="handlePreviewClick()">
       <img *ngIf="getActiveProjectImage()" [src]="getActiveProjectImage()" alt="Project preview" class="preview-image" />
+      <div *ngIf="getActiveProjectImage() && isTouchDevice" class="preview-hint">
+        <span class="hint-text">{{ 'PROJECTS.CLICK_TO_OPEN' | translate }}</span>
+      </div>
     </div>
     <app-project-overlay
       *ngIf="overlayOpen"

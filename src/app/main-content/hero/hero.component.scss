@@ -1,8 +1,8 @@
 :host {
   --bg: #1c1c1c;
   --bg-2: #0b1f1f;
-  --fc: #d9d9d9;
-  --muted: #99a3ad;
+  --fc: #ffffff;
+  --muted: #9aa6b2;
   --accent: #3dcfb6;
   --ring: rgba(47, 224, 197, 0.35);
   --marquee-text: #3dcfb6;
@@ -309,7 +309,7 @@
     font-weight: 700;
     letter-spacing: 0.04em;
     font-size: clamp(1rem, 2.2vw, 1.35rem);
-    animation: marquee 64s linear infinite;
+    animation: marquee 140s linear infinite;
     transform: translateX(120%);
 
     span {
