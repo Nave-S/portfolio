@@ -1,7 +1,7 @@
 <div *ngIf="open" class="overlay-root">
   <div class="backdrop" (click)="onBackdropClick()" aria-hidden="true"></div>
-  <div class="overlay-content">
-    <div class="overlay-content-secondary">
+  <div class="wrap">
+    <div class="overlay-main-content">
       <div class="panel-left" role="dialog" aria-modal="true">
         <h1 class="project-number">{{ activeProject.number }}</h1>
         <h2 class="project-title">{{ activeProject.titleKey | translate }}</h2>

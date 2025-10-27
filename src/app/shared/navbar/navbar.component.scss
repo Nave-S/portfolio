@@ -100,7 +100,6 @@
   }
 }
 
-// Desktop Ansicht
 @media (min-width: 769px) {
   .d-none {
     display: none;
@@ -162,7 +161,6 @@
   }
 }
 
-// Mobile Ansicht
 @media (max-width: 768px) {
   .d-none-first {
     display: none;
@@ -231,3 +229,4 @@
     padding: 16px;
   }
 }
+

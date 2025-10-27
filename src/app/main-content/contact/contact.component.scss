@@ -8,10 +8,8 @@
 }
 
 .contact {
-  // background: radial-gradient(1100px 600px at 0% 0%, rgba(47, 224, 197, 0.08), transparent 60%), var(--bg);
   background-color: var(--bg);
-  padding-top: 144px;
-  padding-bottom: 144px;
+  padding-bottom: clamp(100px, calc(91.518px + 2.6506vw), 144px);
   font-family: 'FiraCode', monospace;
   color: var(--fc);
   font-size: 18px;
@@ -65,7 +63,6 @@
 
 .lead {
   margin: 0 0 16px 0;
-  // max-width: 640px;
   color: var(--fc);
   opacity: 0.9;
   line-height: 1.6;
@@ -280,38 +277,9 @@ textarea:hover::placeholder {
 }
 
 @media (max-width: 1200px) {
-  .kicker {
-    text-align: center;
-  }
-
-  .headline {
-    text-align: center;
-  }
-
-  .subhead {
-    text-align: center;
-  }
-
-  .lead {
-    text-align: center;
-  }
-
-  .pitch {
-    justify-content: center;
-  }
-
-  .tail {
-    text-align: center;
-  }
-
-  .contact {
-    padding-top: 0px;
-    padding-bottom: 120px;
-  }
-
   .wrap {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     gap: 64px;
     width: 100%;
     max-width: 990px;
@@ -319,7 +287,8 @@ textarea:hover::placeholder {
 
   .left,
   .right {
-    max-width: 100%;
+    width: 100%;
+    max-width: 570px;
   }
 
   .btn {
@@ -327,37 +296,8 @@ textarea:hover::placeholder {
   }
 }
 
-// @media (max-width: 1024px) {
-//   .contact {
-//     padding-top: 120px;
-//     padding-bottom: 120px;
-//   }
-
-//   .wrap {
-//     flex-direction: column;
-//     align-items: stretch;
-//     gap: 64px;
-//     padding-left: 56px;
-//     padding-right: 56px;
-//   }
-
-//   .left,
-//   .right {
-//     max-width: 100%;
-//   }
-
-//   .btn {
-//     align-self: center;
-//   }
-// }
-
 @media (max-width: 768px) {
-  // .box {
-  //   width: 48px;
-  // }
-
   .contact {
-    // padding-top: 104px;
     padding-bottom: 104px;
   }
 
@@ -384,20 +324,12 @@ textarea:hover::placeholder {
   }
 
   .pitch {
-    flex-direction: column;
-    // align-items: flex-start;
     gap: 4px;
   }
-
-  // .btn {
-  //   align-self: stretch;
-  //   width: 100%;
-  // }
 }
 
 @media (max-width: 520px) {
   .contact {
-    // padding-top: 88px;
     padding-bottom: 88px;
   }
 
@@ -417,20 +349,19 @@ textarea:hover::placeholder {
   textarea {
     min-height: 96px;
   }
+}
 
-  // .consent {
-  //   align-items: flex-start;
-  // }
+@media (max-width: 370px) {
+  .pitch {
+    flex-direction: column;
+    align-items: baseline;
 
-  // .btn {
-  //   font-size: 17px;
-  //   width: 100%;
-  // }
+    gap: 4px;
+  }
 }
 
 @media (max-width: 360px) {
   .contact {
-    // padding-top: 72px;
     padding-bottom: 72px;
   }
 
@@ -438,10 +369,5 @@ textarea:hover::placeholder {
     padding-left: 20px;
     padding-right: 20px;
   }
-
-  // .btn {
-  //   height: 48px;
-  //   width: 100%;
-  // }
 }
 

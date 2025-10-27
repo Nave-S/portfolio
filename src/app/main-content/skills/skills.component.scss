@@ -6,7 +6,7 @@
 }
 
 .skills-section {
-  background: radial-gradient(1200px 600px at 0% 0%, rgba(47, 224, 197, 0.08), transparent 60%), var(--bg);
+  background: radial-gradient(1200px 500px at 0% 46%, rgba(47, 224, 197, 0.2), transparent 60%), var(--bg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,11 +14,10 @@
   color: var(--fc);
   font-family: 'Karla', sans-serif;
   font-size: 18px;
-  padding-top: 144px;
-  padding-bottom: 144px;
+  padding-bottom: clamp(100px, calc(91.518px + 2.6506vw), 144px);
 }
 
-.content {
+.wrap {
   width: 100%;
   max-width: 1980px;
   display: flex;
@@ -105,7 +104,6 @@
   background: var(--accent);
   font-weight: 400;
   border: 1px solid transparent;
-  // width: 130px;
   height: 48px;
   transition: transform 0.12s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   will-change: transform;
@@ -264,27 +262,18 @@
 }
 
 @media (max-width: 1200px) {
-  .content {
+  .skills-section {
+    background: radial-gradient(1200px 600px at 0% 30%, rgba(47, 224, 197, 0.2), transparent 60%), var(--bg);
+  }
+  .wrap {
     flex-direction: column;
     align-items: center;
     gap: 64px;
   }
-  .skills-section {
-    padding-top: 120px;
-    padding-bottom: 120px;
-  }
-  // .card {
-  //   max-width: 620px;
-  // }
 }
 
 @media (max-width: 768px) {
-  .skills-section {
-    padding-top: 104px;
-    padding-bottom: 104px;
-  }
-
-  .content {
+  .wrap {
     gap: 48px;
   }
 
@@ -328,11 +317,6 @@
 }
 
 @media (max-width: 520px) {
-  .skills-section {
-    padding-top: 88px;
-    padding-bottom: 88px;
-  }
-
   .card {
     padding: 24px;
   }
@@ -352,11 +336,6 @@
 }
 
 @media (max-width: 360px) {
-  .skills-section {
-    padding-top: 72px;
-    padding-bottom: 72px;
-  }
-
   .btn {
     width: 100%;
   }

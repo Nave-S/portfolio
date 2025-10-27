@@ -5,7 +5,6 @@
 }
 
 .projects {
-  // background: radial-gradient(1200px 600px at 0% 0%, rgba(47, 224, 197, 0.08), transparent 60%), var(--bg);
   background: var(--bg);
   font-family: 'FiraCode', sans-serif;
   display: flex;
@@ -14,11 +13,10 @@
   width: 100%;
   color: var(--fc);
   font-size: 18px;
-  padding-top: 144px;
-  padding-bottom: 144px;
+  padding-bottom: clamp(100px, calc(91.518px + 2.6506vw), 144px);
 }
 
-.overall-container {
+.wrap {
   padding-left: clamp(16px, 0.5783px + 4.8193vw, 96px);
   padding-right: clamp(16px, 0.5783px + 4.8193vw, 96px);
   width: 100%;
@@ -29,7 +27,7 @@
   gap: 48px;
 }
 
-.Featured-Projects-container {
+.featured-projects-container {
   width: 100%;
   max-width: 880px;
   height: 581px;
@@ -187,24 +185,34 @@
 }
 
 @media (max-width: 1200px) {
-  .kicker {
-    text-align: center;
+  .featured-projects-container {
+    width: 100%;
+    max-width: 570px;
+    height: 581px;
   }
 
-  .headline {
-    text-align: center;
+  .list li:last-child .item {
+    border-bottom: 1px solid var(--accent);
+    max-width: 570px;
+    width: 100%;
   }
-
-  .intro {
-    text-align: center;
+  .list li:first-child .item {
+    border-top: 1px solid var(--accent);
+    max-width: 570px;
+    width: 100%;
+  }
+  .list li:nth-child(2) .item {
+    border-top: 1px solid var(--accent);
+    border-bottom: 1px solid var(--accent);
+    max-width: 570px;
+    width: 100%;
   }
 
   .projects {
-    padding-top: 120px;
     padding-bottom: 0px;
   }
 
-  .overall-container {
+  .wrap {
     flex-direction: column;
     align-items: center;
     gap: 64px;
@@ -220,15 +228,12 @@
 
   .item {
     gap: 16px;
+    width: 570px;
   }
 }
 
 @media (max-width: 768px) {
-  .projects {
-    padding-top: 104px;
-  }
-
-  .overall-container {
+  .wrap {
     gap: 48px;
   }
 
@@ -255,11 +260,7 @@
 }
 
 @media (max-width: 520px) {
-  .projects {
-    padding-top: 88px;
-  }
-
-  .overall-container {
+  .wrap {
     gap: 32px;
   }
 
@@ -284,11 +285,7 @@
 }
 
 @media (max-width: 360px) {
-  .projects {
-    padding-top: 72px;
-  }
-
-  .overall-container {
+  .wrap {
     gap: 24px;
   }
 
