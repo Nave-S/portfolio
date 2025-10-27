@@ -29,11 +29,11 @@ export class ContactComponent {
   };
 
   post = {
-    endPoint: 'https://www.nawiedsyed.de/sendMail.php',
+    endPoint: 'https://nawiedsyed.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
-        'Content-Type': 'text/plain',
+        'Content-Type': 'application/json',
         responseType: 'text',
       },
     },
