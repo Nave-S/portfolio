@@ -2,13 +2,13 @@
   <div class="nav-container" [class.open]="isMenuOpen">
     <nav class="nav" role="tablist" aria-label="Navigation">
       <app-language-switch class="d-none-first"></app-language-switch>
-      <a href="#about" (click)="closeMenu()"
+      <a (click)="scrollToSection('about')"
         >{{ 'NAVBAR.ABOUT' | translate }}<img class="point-position" src="./assets/icons/point_green.png"
       /></a>
-      <a href="#skills" (click)="closeMenu()"
+      <a (click)="scrollToSection('skills')"
         >{{ 'NAVBAR.SKILLS' | translate }}<img class="point-position" src="./assets/icons/point_green.png"
       /></a>
-      <a href="#projects" (click)="closeMenu()"
+      <a (click)="scrollToSection('projects')"
         >{{ 'NAVBAR.PROJECTS' | translate }}<img class="point-position" src="./assets/icons/point_green.png"
       /></a>
       <app-language-switch class="d-none"></app-language-switch>

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../../shared/navbar/navbar.component';
 import { LanguageService } from '../../services/language.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-hero',
@@ -12,7 +13,7 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './hero.component.scss',
 })
 export class HeroComponent {
-  constructor(private lang: LanguageService) {}
+  constructor(private lang: LanguageService, private viewportScroller: ViewportScroller) {}
 
   tickerKeys = ['HERO.TICKER.REMOTE', 'HERO.TICKER.ROLE', 'HERO.TICKER.BASED', 'HERO.TICKER.OPEN'];
   repeatArray = Array.from({ length: 16 });
@@ -23,6 +24,10 @@ export class HeroComponent {
 
   get current() {
     return this.lang.current();
+  }
+
+  scrollToSection(sectionId: string) {
+    this.viewportScroller.scrollToAnchor(sectionId);
   }
 }
 

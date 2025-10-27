@@ -1,6 +1,7 @@
 import { Component, ElementRef, HostListener } from '@angular/core';
 import { LanguageSwitchComponent } from './language-switch/language-switch.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +13,12 @@ import { TranslateModule } from '@ngx-translate/core';
 export class NavbarComponent {
   isMenuOpen = false;
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef, private viewportScroller: ViewportScroller) {}
+
+  scrollToSection(sectionId: string) {
+    this.viewportScroller.scrollToAnchor(sectionId);
+    this.closeMenu();
+  }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;

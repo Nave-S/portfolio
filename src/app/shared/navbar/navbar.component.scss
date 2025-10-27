@@ -40,6 +40,7 @@
     font-size: 20px;
     transition: color 0.2s ease, text-shadow 0.2s ease;
     padding-top: 8px;
+    cursor: pointer;
     &:hover {
       color: var(--fc);
       opacity: 1;

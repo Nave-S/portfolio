@@ -21,7 +21,7 @@ export class ContactComponent {
     privacy: false,
   };
 
-  mailTest = true;
+  mailTest = false;
 
   messageStatus = {
     show: false,
@@ -29,7 +29,7 @@ export class ContactComponent {
   };
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://www.nawiedsyed.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
