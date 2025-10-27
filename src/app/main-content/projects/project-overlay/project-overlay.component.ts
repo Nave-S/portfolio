@@ -104,7 +104,7 @@ export class ProjectOverlayComponent {
               link: 'https://www.nawiedsyed.de/Join',
             },
           ],
-          previewImage: './assets/images/join_placeholder.png',
+          previewImage: './assets/images/join_overlay.png',
         };
 
       case 'elpolloloco':

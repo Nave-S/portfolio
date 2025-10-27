@@ -46,14 +46,13 @@
   margin-top: 100px;
   width: 100%;
   max-width: 516px;
-  height: 200px;
-  // cursor: pointer;
+  height: 370px;
 
   .preview-image {
     width: 100%;
     max-width: 516px;
-    height: auto;
-    object-fit: contain;
+    height: 370px;
+    object-fit: cover;
     opacity: 1;
     transition: opacity 0.2s ease;
     border-radius: 35px;
