@@ -44,7 +44,7 @@
 .panel-left {
   display: flex;
   flex-direction: column;
-  padding: 90px 44px 90px 80px;
+  padding: 90px 40px 90px 80px;
   width: 50%;
   // overflow-y: auto;
 }
@@ -55,7 +55,7 @@
   align-items: end;
   flex-direction: column;
   width: 50%;
-  padding: 56px 80px 55px 44px;
+  padding: 56px 80px 55px 40px;
   // overflow-y: auto;
 }
 
@@ -120,6 +120,7 @@
   width: 100%;
   max-width: 520px;
   height: 370px;
+  border-radius: 35px;
 }
 
 .panel-next {
@@ -147,6 +148,67 @@
     img {
       transform: translateX(8px);
     }
+  }
+}
+.swipe-btn {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Karla', sans-serif;
+  gap: 8px;
+  border: 0;
+  color: var(--accent);
+  line-height: 1;
+  cursor: pointer;
+  margin-top: 48px;
+  border-radius: 10px;
+  background-color: transparent;
+  img {
+    transition: transform 0.12s ease;
+    animation: swipeArrow 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes swipeArrow {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+}
+
+.swipe-btn-small-devices {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Karla', sans-serif;
+  gap: 8px;
+  border: 0;
+  color: var(--accent);
+  line-height: 1;
+  cursor: pointer;
+  margin-top: 48px;
+  border-radius: 10px;
+  background-color: transparent;
+  img {
+    transition: transform 0.12s ease;
+    animation: swipeArrow 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes swipeArrow {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px);
   }
 }
 
@@ -395,9 +457,29 @@
   }
 }
 
-// @media (pointer: coarse) and (hover: none) {
-//   .panel-left {
-//     margin-bottom: auto;
-//   }
-// }
+@media (pointer: coarse) and (hover: none) {
+  .swipe-btn {
+    display: flex;
+  }
+  .panel-next-responsive {
+    display: none;
+  }
+
+  .panel-next {
+    display: none;
+  }
+  .swipe-btn-small-devices {
+    display: none;
+  }
+}
+
+@media (pointer: coarse) and (hover: none) and (min-width: 320px) and (max-width: 950px) {
+  .swipe-btn {
+    display: none;
+  }
+
+  .swipe-btn-small-devices {
+    display: flex;
+  }
+}
 

@@ -27,6 +27,11 @@
           <span>{{ 'PROJECTS.NEXT' | translate }}</span
           ><img src="./assets/icons/next_arrow.png" alt="" />
         </button>
+
+        <button type="button" class="swipe-btn-small-devices" aria-label="Next" (click)="nextProject()">
+          <img src="./assets/icons/arrow_back_green.png" alt="" />
+          <span>Swipe {{ 'PROJECTS.NEXT' | translate }}</span>
+        </button>
       </div>
       <div class="panel-right">
         <button type="button" class="panel-close" (click)="close()" aria-label="Close">
@@ -38,10 +43,9 @@
           ><img src="./assets/icons/next_arrow.png" alt="" />
         </button>
 
-        <button type="button" class="panel-next" aria-label="Next" (click)="nextProject()">
-          <span><--</span>
-          <span>Or Swipe</span>
-          <!-- <img src="./assets/icons/next_arrow.png" alt="" /> -->
+        <button type="button" class="swipe-btn" aria-label="Next" (click)="nextProject()">
+          <img src="./assets/icons/arrow_back_green.png" alt="" />
+          <span>Swipe {{ 'PROJECTS.NEXT' | translate }}</span>
         </button>
       </div>
     </div>

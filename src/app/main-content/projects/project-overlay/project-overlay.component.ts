@@ -101,7 +101,7 @@ export class ProjectOverlayComponent {
             {
               labelKey: 'PROJECTS.BUTTONS.LIVE',
               icon: './assets/icons/arrow_green.png',
-              link: 'https://your-live-site',
+              link: 'https://www.nawiedsyed.de/Join',
             },
           ],
           previewImage: './assets/images/join_placeholder.png',
@@ -139,10 +139,10 @@ export class ProjectOverlayComponent {
             {
               labelKey: 'PROJECTS.OVERLAY.ELPOLLOLOCO.BUTTONS.LIVE',
               icon: './assets/icons/arrow_green.png',
-              link: 'https://your-live-site',
+              link: 'https://www.nawiedsyed.de/El-Pollo-Loco',
             },
           ],
-          previewImage: './assets/images/el_pollo_loco_placeholder.png',
+          previewImage: './assets/images/el_pollo_loco_overlay.png',
         };
 
       default:
