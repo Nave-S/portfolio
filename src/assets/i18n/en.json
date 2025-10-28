@@ -20,7 +20,7 @@
   "ABOUT": {
     "KICKER": "Who I Am",
     "TITLE": "About me",
-    "INTRO": "Hey, I’m Nawied! After more than 15 years in the German Armed Forces, I discovered my passion for programming especially in frontend development. I love turning creative ideas into visible code while working in a structured, solution-oriented way and within a team. What motivates me is the constant change in IT: new technologies, tools, and frameworks inspire me every day to learn more and improve. I see problems as opportunities to find the best solution through analytical thinking, perseverance, and creativity.",
+    "INTRO": "Hey, I’m Nawied! After more than 15 years in the German Armed Forces, I discovered my passion for programming especially in frontend development. I love turning creative ideas into visible code while working in a structured, solution-oriented way and within a team. What motivates me is the constant change in IT new technologies, tools, and frameworks inspire me every day to learn more and improve. I see problems as opportunities to find the best solution through analytical thinking, perseverance, and creativity.",
     "LOCATION": {
       "TEXT": "I live near Unna and am open to remote work as well as potential relocations."
     },
@@ -35,7 +35,7 @@
   "SKILLS": {
     "KICKER": "Technologies",
     "TITLE": "Skill Set",
-    "INTRO": " A short introduction of your skills. Highlight your experience of using different front-end technologies and emphasise your openness to learning and adapting to new technologies. Show how important it is for you to keep up with the rapid changes in webdevelopment.",
+    "INTRO": "I work as a front-end developer focused on modern web technologies. Clean, maintainable code and a pleasant user experience are important to me. I’m familiar with current frameworks and tools and continuously expand my knowledge to keep pace with developments on the web.I enjoy working in agile teams, sharing knowledge, and finding pragmatic, easy-to-understand solutions to complex challenges.",
     "PITCH": "You need",
     "PITCH_HIGHLIGHT": "another skill?",
     "PITCH_TEXT": "Feel free to reach out. I look forward to expanding my knowledge.",
