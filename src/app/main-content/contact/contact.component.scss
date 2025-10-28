@@ -262,6 +262,18 @@ textarea:hover::placeholder {
   box-shadow: 0 10px 24px rgba(47, 224, 197, 0.35);
 }
 
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn:disabled:hover {
+  transform: none;
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: none;
+}
+
 .success-message {
   position: fixed;
   bottom: 50%;

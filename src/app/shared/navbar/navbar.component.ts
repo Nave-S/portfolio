@@ -1,7 +1,7 @@
 import { Component, ElementRef, HostListener } from '@angular/core';
 import { LanguageSwitchComponent } from './language-switch/language-switch.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { ViewportScroller } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -13,11 +13,27 @@ import { ViewportScroller } from '@angular/common';
 export class NavbarComponent {
   isMenuOpen = false;
 
-  constructor(private elementRef: ElementRef, private viewportScroller: ViewportScroller) {}
+  constructor(private elementRef: ElementRef, private router: Router) {}
 
   scrollToSection(sectionId: string) {
-    this.viewportScroller.scrollToAnchor(sectionId);
-    this.closeMenu();
+    this.isMenuOpen = false;
+
+    if (this.router.url !== '/') {
+      this.router.navigate(['/']).then(() => {
+        setTimeout(() => {
+          this.performScroll(sectionId);
+        }, 100);
+      });
+    } else {
+      this.performScroll(sectionId);
+    }
+  }
+
+  private performScroll(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   toggleMenu() {

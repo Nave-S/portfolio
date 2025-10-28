@@ -93,7 +93,7 @@
       </div>
 
       <div class="btn-position">
-        <button class="btn" type="submit">{{ 'CONTACT.FORM.SUBMIT' | translate }}</button>
+        <button class="btn" type="submit" [disabled]="!contactForm.valid">{{ 'CONTACT.FORM.SUBMIT' | translate }}</button>
       </div>
     </form>
   </div>
