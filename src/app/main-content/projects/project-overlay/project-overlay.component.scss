@@ -37,7 +37,9 @@
 .overlay-main-content {
   width: 100%;
   height: 100%;
+  max-height: calc(100vh - 72px);
   display: flex;
+  overflow-y: auto;
 }
 
 .panel-left {
@@ -147,6 +149,7 @@
     }
   }
 }
+
 .swipe-btn {
   display: none;
   justify-content: center;
@@ -393,12 +396,16 @@
 @media (max-width: 600px) {
   .overlay-main-content {
     width: 100%;
+    padding: 0 8px 0 0;
+    margin-right: -8px;
   }
 
   .wrap {
     width: 100%;
     margin: 0 20px;
     border-radius: 24px;
+    overflow: hidden;
+    padding: 0;
   }
 
   .panel-left,
