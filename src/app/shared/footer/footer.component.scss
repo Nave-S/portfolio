@@ -41,6 +41,7 @@
   text-decoration: none;
   color: var(--fc);
   font-family: 'FiraCode', monospace;
+  cursor: pointer;
 
   .mark {
     width: 32px;
@@ -131,9 +132,9 @@
 }
 
 @media (max-width: 1200px) {
-  .site-footer {
-    padding-top: 0px;
-  }
+  // .site-footer {
+  //   padding-top: 0px;
+  // }
 
   .copyright {
     display: none;

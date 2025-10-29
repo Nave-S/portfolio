@@ -1,3 +1,15 @@
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<div class="loading-screen" *ngIf="isLoading">
+  <div class="loading-content">
+    <div class="spinner"></div>
+    <h2>Loading...</h2>
+    <div class="loading-bar">
+      <div class="loading-progress"></div>
+    </div>
+  </div>
+</div>
+
+<div class="main-app" [class.loaded]="!isLoading">
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</div>
 

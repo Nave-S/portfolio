@@ -59,5 +59,18 @@ export class NavbarComponent {
     if (target.closest('.burger-menu-button')) return;
     this.closeMenu();
   }
+
+  navigateToHome() {
+    this.closeMenu();
+    if (this.router.url !== '/') {
+      this.router.navigate(['/']).then(() => {
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
+      });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
 }
 

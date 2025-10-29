@@ -207,6 +207,21 @@ export class ProjectOverlayComponent {
 
   ngOnInit(): void {
     this.disableScroll();
+    setTimeout(() => {
+      if (window.innerWidth <= 1320) {
+        const overlayElement = document.querySelector('.overlay-main-content') as HTMLElement;
+        const panelRight = document.querySelector('.panel-right') as HTMLElement;
+
+        if (overlayElement && panelRight) {
+          overlayElement.scrollTop = panelRight.offsetTop;
+        }
+      } else {
+        const overlayElement = document.querySelector('.overlay-main-content') as HTMLElement;
+        if (overlayElement) {
+          overlayElement.scrollTop = 0;
+        }
+      }
+    }, 100);
   }
 
   ngOnDestroy(): void {

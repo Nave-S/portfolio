@@ -1,4 +1,4 @@
-<header class="top-bar" (click)="onTopBarClick($event)">
+<header class="top-bar" data-aos="zoom-in" data-aos-delay="200" (click)="onTopBarClick($event)">
   <div class="nav-container" [class.open]="isMenuOpen">
     <nav class="nav" role="tablist" aria-label="Navigation">
       <app-language-switch class="d-none-first"></app-language-switch>
@@ -15,13 +15,13 @@
     </nav>
   </div>
 
-  <a class="brand" href="#">
+  <a class="brand" (click)="navigateToHome()">
     <span class="mark">NS</span>
     <span class="brand-text">Nawied<br />Syed</span>
   </a>
 
   <div class="navbar-language-container">
-    <button class="burger-menu-button" (click)="toggleMenu()" aria-label="Toggle navigation menu">
+    <button class="burger-menu-button" data-aos="flip-left" data-aos-delay="200" (click)="toggleMenu()" aria-label="Toggle navigation menu">
       <div class="burger-bar"></div>
       <div class="burger-bar"></div>
       <div class="burger-bar"></div>
