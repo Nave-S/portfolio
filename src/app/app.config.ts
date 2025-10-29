@@ -1,9 +1,10 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, APP_INITIALIZER } from '@angular/core';
 import { provideRouter, withViewTransitions, withInMemoryScrolling } from '@angular/router';
 import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { routes } from './app.routes';
+import AOS from 'aos';
 
 class CustomTranslateLoader implements TranslateLoader {
   constructor(private http: HttpClient) {}
@@ -15,6 +16,17 @@ class CustomTranslateLoader implements TranslateLoader {
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new CustomTranslateLoader(http);
+}
+
+export function initializeAOS() {
+  return () => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100,
+      easing: 'ease-in-out',
+    });
+  };
 }
 
 export const appConfig: ApplicationConfig = {
@@ -39,6 +51,11 @@ export const appConfig: ApplicationConfig = {
         fallbackLang: 'en',
       })
     ),
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeAOS,
+      multi: true,
+    },
   ],
 };
 

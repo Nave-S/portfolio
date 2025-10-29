@@ -1,6 +1,6 @@
 <section id="skills" class="skills-section" aria-labelledby="skills-title">
   <div class="wrap">
-    <div class="card-title">
+    <div class="card-title" data-aos="fade-right">
       <p class="kicker">{{ 'SKILLS.KICKER' | translate }}</p>
       <article class="card" role="article">
         <h2 id="skills-title" class="title">{{ 'SKILLS.TITLE' | translate }}</h2>
@@ -19,7 +19,7 @@
         >
       </article>
     </div>
-    <div class="skills" role="list">
+    <div class="skills" role="list" data-aos="zoom-in">
       @for(skill of skills; track skill.label){
       <div class="skill">
         <img src="./assets/icons/{{ skill.icon }}" alt="" srcset="" />
