@@ -1,6 +1,6 @@
 <section id="projects" class="projects" aria-labelledby="projects-title">
   <div class="wrap">
-    <div class="featured-projects-container">
+    <div class="featured-projects-container" data-aos="fade-up">
       <p class="kicker">Portfolio</p>
       <h2 id="projects-title" class="headline">{{ 'PROJECTS.TITLE' | translate }}</h2>
       <p class="intro">{{ 'PROJECTS.INTRO' | translate }}</p>
@@ -57,7 +57,7 @@
       </ul>
     </div>
     <div class="projects-preview" (click)="handlePreviewClick()">
-      <img *ngIf="getActiveProjectImage()" [src]="getActiveProjectImage()" alt="Project preview" class="preview-image" />
+      <img *ngIf="getActiveProjectImage()" [src]="getActiveProjectImage()" alt="Project preview" class="preview-image fade-in" />
       <div *ngIf="getActiveProjectImage() && isTouchDevice" class="preview-hint">
         <span class="hint-text">{{ 'PROJECTS.CLICK_TO_OPEN' | translate }}</span>
       </div>

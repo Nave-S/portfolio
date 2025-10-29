@@ -1,6 +1,6 @@
 <section id="contact" class="contact" aria-labelledby="contact-title">
   <div class="wrap">
-    <div class="left">
+    <div class="left" data-aos="flip-left">
       <p class="kicker">{{ 'CONTACT.KICKER' | translate }}</p>
       <h2 id="contact-title" class="headline">
         <span>{{ 'CONTACT.TITLE' | translate }}{{ 'CONTACT.TITLE_SEC' | translate }}</span>
@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    <form id="form" (ngSubmit)="onSubmit(contactForm)" class="right" #contactForm="ngForm">
+    <form id="form" (ngSubmit)="onSubmit(contactForm)" class="right" #contactForm="ngForm" data-aos="flip-right">
       <div class="field">
         <label for="name" class="question">{{ 'CONTACT.FORM.NAME' | translate }}</label>
         <input
