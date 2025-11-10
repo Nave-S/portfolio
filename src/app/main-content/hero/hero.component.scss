@@ -300,6 +300,11 @@
   z-index: 99;
   overflow: hidden;
 
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+
   .track {
     font-family: 'Karla', sans-serif;
     font-size: 32px;
@@ -311,6 +316,9 @@
     font-size: clamp(1rem, 2.2vw, 1.35rem);
     animation: marquee 140s linear infinite;
     transform: translateX(120%);
+    -webkit-animation: marquee 140s linear infinite;
+    -moz-animation: marquee 140s linear infinite;
+    animation: marquee 140s linear infinite;
 
     span {
       margin-right: 3rem;
@@ -324,9 +332,11 @@
 @keyframes marquee {
   0% {
     transform: translateX(0%);
+    -webkit-transform: translateX(0%);
   }
   100% {
     transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
   }
 }
 
@@ -389,10 +399,10 @@
 
 @media (prefers-reduced-motion: reduce) {
   /* Animation aus */
-  .ticker .track {
-    animation: none !important;
-    transform: none !important;
-  }
+  // .ticker .track {
+  //   animation: none !important;
+  //   transform: none !important;
+  // }
 
   /* Statischer Text */
   .screenreader-only {
@@ -407,9 +417,9 @@
   }
 
   /* Animation ausblenden */
-  .ticker {
-    display: none !important;
-  }
+  // .ticker {
+  //   display: none !important;
+  // }
 }
 /* --------------Screenreader Test-------------- */
 
