@@ -82,23 +82,22 @@ export class ProjectsComponent {
   }
 
   handleTouchStart(event: Event, projectName: string) {
-    if (this.isTouchDevice) {
-      event.preventDefault();
-      if (this.touchActiveProject === projectName) {
-        this.openOverlay(projectName);
-        this.touchActiveProject = null;
-      } else {
-        this.touchActiveProject = projectName;
-        this.showProjectPreview(projectName);
-      }
+    event.preventDefault();
+    if (this.touchActiveProject !== projectName) {
+      this.touchActiveProject = projectName;
+      this.showProjectPreview(projectName);
+    } else {
+      this.openOverlay(projectName);
+      this.touchActiveProject = null;
     }
   }
 
   handleProjectClick(event: Event, projectName: string) {
-    if (!this.isTouchDevice) {
-      event.stopPropagation();
-      this.openOverlay(projectName);
+    if (this.isTouchDevice) {
+      return;
     }
+    event.stopPropagation();
+    this.openOverlay(projectName);
   }
 
   handlePreviewClick() {
