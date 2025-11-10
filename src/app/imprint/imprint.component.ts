@@ -14,7 +14,13 @@ export class ImprintComponent implements OnInit {
   constructor(private lang: LanguageService) {}
 
   ngOnInit(): void {
+    const html = document.documentElement;
+    const prevScrollBehavior = html.style.scrollBehavior;
+    html.style.scrollBehavior = 'auto';
     window.scrollTo(0, 0);
+    setTimeout(() => {
+      html.style.scrollBehavior = prevScrollBehavior || '';
+    }, 0);
   }
 
   setLang(lang: 'en' | 'de') {
@@ -25,3 +31,4 @@ export class ImprintComponent implements OnInit {
     return this.lang.current();
   }
 }
+

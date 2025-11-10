@@ -30,6 +30,7 @@ export class ProjectOverlayComponent {
   private originalBodyStyle: string = '';
   private touchStartX = 0;
   private touchEndX = 0;
+  private prevScrollBehavior = '';
 
   constructor(private lang: LanguageService) {}
   setLang(lang: 'en' | 'de') {
@@ -206,22 +207,61 @@ export class ProjectOverlayComponent {
   }
 
   ngOnInit(): void {
+    this.disableSmoothScrolling();
     this.disableScroll();
-    setTimeout(() => {
-      if (window.innerWidth <= 1320) {
-        const overlayElement = document.querySelector('.overlay-main-content') as HTMLElement;
-        const panelRight = document.querySelector('.panel-right') as HTMLElement;
+    this.initializeOverlayScroll();
+  }
 
-        if (overlayElement && panelRight) {
-          overlayElement.scrollTop = panelRight.offsetTop;
-        }
-      } else {
-        const overlayElement = document.querySelector('.overlay-main-content') as HTMLElement;
-        if (overlayElement) {
-          overlayElement.scrollTop = 0;
-        }
-      }
-    }, 100);
+  private disableSmoothScrolling(): void {
+    const html = document.documentElement;
+    this.prevScrollBehavior = html.style.scrollBehavior;
+    html.style.scrollBehavior = 'auto';
+  }
+
+  private initializeOverlayScroll(): void {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        this.applyInitialScroll();
+        this.restoreSmoothScrolling();
+      });
+    });
+  }
+
+  private applyInitialScroll(): void {
+    const overlayElement = this.getOverlayElement();
+    if (!overlayElement) return;
+
+    if (this.shouldScrollToPreview()) {
+      this.scrollToPreviewPanel(overlayElement);
+    } else {
+      this.scrollToTop(overlayElement);
+    }
+  }
+
+  private getOverlayElement(): HTMLElement | null {
+    return document.querySelector('.overlay-main-content') as HTMLElement | null;
+  }
+
+  private shouldScrollToPreview(): boolean {
+    return window.innerWidth <= 1320;
+  }
+
+  private scrollToPreviewPanel(overlayElement: HTMLElement): void {
+    const panelRight = document.querySelector('.panel-right') as HTMLElement | null;
+    if (panelRight) {
+      overlayElement.scrollTop = panelRight.offsetTop;
+    }
+  }
+
+  private scrollToTop(overlayElement: HTMLElement): void {
+    overlayElement.scrollTop = 0;
+  }
+
+  private restoreSmoothScrolling(): void {
+    setTimeout(() => {
+      const html = document.documentElement;
+      html.style.scrollBehavior = this.prevScrollBehavior || '';
+    }, 0);
   }
 
   ngOnDestroy(): void {

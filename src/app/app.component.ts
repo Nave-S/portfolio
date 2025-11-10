@@ -1,20 +1,74 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError, Event as RouterEvent } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
-import { MainContentComponent } from './main-content/main-content-component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { ImprintComponent } from './imprint/imprint.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MainContentComponent, FooterComponent, ImprintComponent],
+  imports: [CommonModule, RouterOutlet, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
   title = 'portfolio';
   isLoading = true;
+
+  private prevScrollBehavior = '';
+
+  constructor(private router: Router) {
+    this.setupScrollBehaviorOnNavigation();
+  }
+
+  private setupScrollBehaviorOnNavigation(): void {
+    this.router.events.subscribe((event: RouterEvent) => {
+      if (event instanceof NavigationStart) {
+        this.disableSmoothScrolling();
+        this.setManualScrollRestoration();
+      }
+
+      if (event instanceof NavigationEnd || event instanceof NavigationCancel || event instanceof NavigationError) {
+        this.restoreScrollBehavior();
+      }
+    });
+  }
+
+  private disableSmoothScrolling(): void {
+    const html = document.documentElement;
+    const body = document.body;
+
+    this.prevScrollBehavior = html.style.scrollBehavior || body.style.scrollBehavior || '';
+    html.style.scrollBehavior = 'auto';
+    body.style.scrollBehavior = 'auto';
+  }
+
+  private setManualScrollRestoration(): void {
+    try {
+      if ('scrollRestoration' in history) {
+        (history as any).scrollRestoration = 'manual';
+      }
+    } catch (e) {}
+  }
+
+  private restoreScrollBehavior(): void {
+    setTimeout(() => {
+      const html = document.documentElement;
+      const body = document.body;
+      html.style.scrollBehavior = this.prevScrollBehavior || '';
+      body.style.scrollBehavior = this.prevScrollBehavior || '';
+
+      this.restoreAutoScrollRestoration();
+    }, 0);
+  }
+
+  private restoreAutoScrollRestoration(): void {
+    try {
+      if ('scrollRestoration' in history) {
+        (history as any).scrollRestoration = 'auto';
+      }
+    } catch (e) {}
+  }
 
   ngOnInit() {
     document.body.classList.add('loading');

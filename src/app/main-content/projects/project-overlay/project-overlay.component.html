@@ -1,6 +1,6 @@
 <div *ngIf="open" class="overlay-root">
   <div class="backdrop" (click)="onBackdropClick()" aria-hidden="true"></div>
-  <div class="wrap">
+  <div class="wrap" data-aos="zoom-in">
     <div class="overlay-main-content">
       <div class="panel-left" role="dialog" aria-modal="true">
         <h1 class="project-number">{{ activeProject.number }}</h1>
