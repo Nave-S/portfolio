@@ -232,6 +232,14 @@
   }
 }
 
+.tech-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding-top: 8px;
+}
+
 .btn-position {
   display: flex;
   justify-content: flex-start;
@@ -308,7 +316,7 @@
     display: flex;
     flex-direction: column-reverse;
     overflow: auto;
-    scrollbar-width: none;
+    // scrollbar-width: none;
     -ms-overflow-style: none;
   }
 
@@ -411,6 +419,10 @@
     padding: 0;
   }
 
+  .panel-right {
+    align-items: center;
+  }
+
   .panel-left,
   .panel-right {
     padding: 36px 24px;
@@ -453,6 +465,10 @@
 @media (max-width: 360px) {
   .wrap {
     margin: 0 12px;
+  }
+
+  .panel-right {
+    align-items: center;
   }
 
   .panel-left,

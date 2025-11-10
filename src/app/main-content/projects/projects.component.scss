@@ -108,7 +108,7 @@
 
 .headline {
   margin-bottom: 41px;
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2.5rem, 6vw, 3.4rem);
   font-weight: 700;
   color: var(--accent);
 }
@@ -309,3 +309,4 @@
     transform: translateY(0);
   }
 }
+

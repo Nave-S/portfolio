@@ -10,8 +10,10 @@
 
         <div class="tech">
           @for (tech of activeProject.tech; track tech.nameKey) {
-          <img class="tech-icon" [src]="tech.icon" [attr.alt]="tech.altKey ? (tech.altKey | translate) : null" />
-          <span>{{ tech.nameKey | translate }}</span>
+          <div class="tech-item">
+            <img class="tech-icon" [src]="tech.icon" [attr.alt]="tech.altKey ? (tech.altKey | translate) : null" />
+            <span>{{ tech.nameKey | translate }}</span>
+          </div>
           }
         </div>
 
