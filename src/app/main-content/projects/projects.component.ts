@@ -81,8 +81,16 @@ export class ProjectsComponent {
     }
   }
 
+  private isPreviewVisible(): boolean {
+    return window.innerWidth > 1200;
+  }
+
   handleTouchStart(event: Event, projectName: string) {
     event.preventDefault();
+    if (!this.isPreviewVisible()) {
+      this.openOverlay(projectName);
+      return;
+    }
     if (this.touchActiveProject !== projectName) {
       this.touchActiveProject = projectName;
       this.showProjectPreview(projectName);
